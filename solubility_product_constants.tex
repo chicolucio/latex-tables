@@ -1,0 +1,300 @@
+\documentclass[a4paper, 10pt]{article}
+
+%margens
+\usepackage[top=1cm, bottom=2cm, left=1cm, right=1cm, includefoot]{geometry}
+
+\label{conf_geral}
+\usepackage[utf8x]{inputenc} %caracteres acentuados
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[brazil]{babel}
+\usepackage{amsfonts, amssymb, amsmath, amsthm, commath, physics} % ver explicação em https://tex,stackexchange,com/questions/32100/what-does-each-ams-package-do
+\usepackage{mathtools}
+\usepackage{proof} %?
+%\usepackage{eulervm, bookman}
+\usepackage{marginnote} % nota de margem
+\usepackage{comment} % comentários longos no código
+\usepackage[font=small,labelfont=bf]{caption} %fonte das legendas
+\usepackage{lipsum} %gerador de lorota em Latim
+\usepackage{lscape}
+\usepackage{pdflscape}
+
+\label{conf_fonts}
+\usepackage[fontsize=10pt]{scrextend}
+%\usepackage{moresize}
+\usepackage[normalem]{ulem}
+
+\label{conf_graph}
+\usepackage{graphicx} %inserir figuras
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{wrapfig} %figuras rodeadas por texto
+
+\label{conf_SI}
+\usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
+\DeclareSIUnit{\atmosphere}{atm}
+\DeclareSIUnit{\calorie}{cal}
+\sisetup{output-decimal-marker = {.}, round-mode=off, add-decimal-zero=false} %números na forma 1,0 ao invés de 1,0
+
+\label{conf_spacing_par}
+\usepackage{xspace} %para correção de espaços
+\usepackage{setspace} %espaçamento entre linhas e opções mais comuns
+\singlespacing
+%\onehalfspacing
+%\doublespacing
+%\setstretch{1,1}
+\parindent 0ex %retirada de indentação de todos os parágrafos
+%\setlength\parskip{\baselineskip}
+\usepackage{parskip} %espaçamento entre parágrafos
+
+\label{conf_chemistry_packages}
+\usepackage[version=4]{mhchem} %pacote química
+\usepackage{chemfig}
+\renewcommand*\printatom[1]{\ensuremath{\mathsf{#1}}}
+\usepackage{elements}
+\usepackage{chemmacros}
+\chemsetup[acid-base]{p-style=slanted}
+\NewChemEqConstant{\Kc}{K-conc}{\mathrm{c}}
+\NewChemEqConstant{\Kp}{K-press}{\mathrm{p}}
+\usechemmodule{thermodynamics}
+
+\label{conf_table}
+\usepackage{array} %tabelas
+\usepackage{booktabs}
+\usepackage{makecell} %editar células em tabelas
+\renewcommand\theadalign{cb}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[1pt]}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{supertabular}
+
+\label{conf_head_footnote}
+\usepackage[absolute]{textpos}
+\usepackage{fancyhdr} %cabeçalhos e rodapé
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{}
+\fancyhead[C]{Solubility product constants \\ Francisco Bustamante}
+\fancyhead[R]{}
+\setlength{\headheight}{55pt}
+\fancyfoot{}
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[R]{\footnotesize Page \thepage \,of \pageref*{LastPage}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\label{conf_xlop}
+\usepackage{xlop}
+\opset{decimalsepsymbol={,}}
+
+\label{conf_refs}
+\usepackage[super,sort&compress]{natbib} %numeração refs sobrescrito
+\usepackage{notoccite}
+\usepackage{lastpage} %possibilita se referir à última página
+\setcounter{secnumdepth}{3}
+\usepackage{hyperref} % referências cruzadas
+
+\label{conf_id_doc}
+%identificação do documento
+\author{Prof. Francisco Bustamante}
+\title{\textit{Solubility product constants}}
+\date{2019}
+
+\begin{document}
+
+\small
+
+\twocolumn
+
+The solubility product constant $K_{sp}$ is a useful parameter for calculating the aqueous solubility of sparingly soluble compounds under various conditions. It may be determined by direct measurement or calculated from the standard Gibbs energies of formation \gibbs*(f){} of the species involved at their standard states. Thus if $K_{sp} = \ce{[M+]^m[A^-]^n}$ is the equilibrium constant for the reaction
+\begin{align*}
+    \ce{M_mA_n(s) <=> mM+(aq) + nA-(aq)}
+\end{align*}
+where \ce{M_mA_n} is the slightly soluble substance and \ce{M+} and \ce{A-} are the ions produced in solution by the dissociation of \ce{MmAn}, then the Gibbs energy change is
+\begin{align*}
+    \gibbs*{} = m\gibbs*(f){}(\ce{M+(aq)}) + n\gibbs*(f){}(\ce{A-(aq)}) - \gibbs*(f){}(\ce{M_mA_n(s)})
+\end{align*}
+The solubility product constant is calculated from the equation $\ln K_{sp} = \dfrac{-\gibbs*{}}{RT}$.
+
+The table gives selected values of $K_{sp}$ at \SI{25}{\celsius}. The above formulation is not convenient for treating sulfides because the \ce{S^{-2}} ion is usually not present in significant concentrations. This is due to the hydrolysis reaction \ce{S^{-2} + H2O <=> HS- + OH-} which is strongly shifted to the right except in very basic solutions. Furthermore, the equilibrium constant for this reaction, which depends on the second ionization constant of \ce{H2S}, is poorly known. Therefore it is more useful in the case of sulfides to define a different solubility product $K_{spa}$ based on the reaction
+\begin{align*}
+    \ce{M_mS_n(s) + 2H+(aq) <=> mM+(aq) + nH2S(aq)}
+\end{align*}
+
+Reference: Rumble, J. \textit{CRC Handbook of Chemistry and Physics}, 98th Edition, CRC Press LLC, 2017.
+
+\tablehead{%
+    \toprule
+    Formula &             $K_{sp}$ &         $K_{spa}$ \\
+    \midrule
+}
+
+\begin{footnotesize}
+    \begin{supertabular}{lll}
+        \ce{Ag2C2O4} &  \num{5.40d-12} &              \\
+        \ce{Ag2CO3} &  \num{8.46d-12} &              \\
+       \ce{Ag2CrO4} &  \num{1.12d-12} &              \\
+        \ce{Ag2SO3} &  \num{1.50d-14} &              \\
+        \ce{Ag2SO4} &   \num{1.20d-5} &              \\
+          \ce{Ag2S} &                 &  \num{6d-30} \\
+       \ce{Ag3AsO4} &  \num{1.03d-22} &              \\
+        \ce{Ag3PO4} &  \num{8.89d-17} &              \\
+        \ce{AgBrO3} &   \num{5.38d-5} &              \\
+          \ce{AgBr} &  \num{5.35d-13} &              \\
+      \ce{AgC2H3O2} &   \num{1.94d-3} &              \\
+          \ce{AgCN} &  \num{5.97d-17} &              \\
+          \ce{AgCl} &  \num{1.77d-10} &              \\
+         \ce{AgIO3} &   \num{3.17d-8} &              \\
+           \ce{AgI} &  \num{8.52d-17} &              \\
+         \ce{AgSCN} &  \num{1.03d-12} &              \\
+         \ce{AlPO4} &  \num{9.84d-21} &              \\
+     \ce{Ba(BrO3)2} &   \num{2.43d-4} &              \\
+  \ce{Ba(IO3)2.H2O} &   \num{1.67d-9} &              \\
+      \ce{Ba(IO3)2} &   \num{4.01d-9} &              \\
+  \ce{Ba(OH)2.8H2O} &   \num{2.55d-4} &              \\
+         \ce{BaCO3} &   \num{2.58d-9} &              \\
+        \ce{BaCrO4} &  \num{1.17d-10} &              \\
+          \ce{BaF2} &   \num{1.84d-7} &              \\
+        \ce{BaMoO4} &   \num{3.54d-8} &              \\
+         \ce{BaSO3} &   \num{5.0d-10} &              \\
+         \ce{BaSO4} &  \num{1.08d-10} &              \\
+        \ce{BaSeO4} &   \num{3.40d-8} &              \\
+       \ce{Be(OH)2} $(\alpha)$ &  \num{6.92d-22} &              \\
+        \ce{BiAsO4} &  \num{4.43d-10} &              \\
+          \ce{BiI3} &  \num{7.71d-19} &              \\
+ \ce{Ca(IO3)2.6H2O} &   \num{7.10d-7} &              \\
+      \ce{Ca(IO3)2} &   \num{6.47d-6} &              \\
+       \ce{Ca(OH)2} &   \num{5.02d-6} &              \\
+     \ce{Ca3(PO4)2} &  \num{2.07d-33} &              \\
+    \ce{CaC2O4.H2O} &   \num{2.32d-9} &              \\
+         \ce{CaCO3} (calcite) &   \num{3.36d-9} &              \\
+          \ce{CaF2} &  \num{3.45d-11} &              \\
+        \ce{CaMoO4} &   \num{1.46d-8} &              \\
+ \ce{CaSO3.0.5H2O} &    \num{3.1d-7} &              \\
+    \ce{CaSO4.2H2O} &   \num{3.14d-5} &              \\
+         \ce{CaSO4} &   \num{4.93d-5} &              \\
+      \ce{Cd(IO3)2} &    \num{2.5d-8} &              \\
+       \ce{Cd(OH)2} &   \num{7.2d-15} &              \\
+    \ce{Cd3(AsO4)2} &   \num{2.2d-33} &              \\
+     \ce{Cd3(PO4)2} &  \num{2.53d-33} &              \\
+   \ce{CdC2O4.3H2O} &   \num{1.42d-8} &              \\
+         \ce{CdCO3} &   \num{1.0d-12} &              \\
+          \ce{CdF2} &   \num{6.44d-3} &              \\
+           \ce{CdS} &                 &   \num{8d-7} \\
+ \ce{Co(IO3)2.2H2O} &   \num{1.21d-2} &              \\
+       \ce{Co(OH)2} &  \num{5.92d-15} &              \\
+    \ce{Co3(AsO4)2} &  \num{6.80d-29} &              \\
+     \ce{Co3(PO4)2} &  \num{2.05d-35} &              \\
+        \ce{CsClO4} &   \num{3.95d-3} &              \\
+         \ce{CsIO4} &   \num{5.16d-6} &              \\
+  \ce{Cu(IO3)2.H2O} &   \num{6.94d-8} &              \\
+    \ce{Cu3(AsO4)2} &  \num{7.95d-36} &              \\
+     \ce{Cu3(PO4)2} &  \num{1.40d-37} &              \\
+          \ce{CuBr} &   \num{6.27d-9} &              \\
+        \ce{CuC2O4} &  \num{4.43d-10} &              \\
+          \ce{CuCN} &  \num{3.47d-20} &              \\
+          \ce{CuCl} &   \num{1.72d-7} &              \\
+           \ce{CuI} &  \num{1.27d-12} &              \\
+         \ce{CuSCN} &  \num{1.77d-13} &              \\
+           \ce{CuS} &                 &  \num{6d-16} \\
+       \ce{Eu(OH)3} &  \num{9.38d-27} &              \\
+       \ce{Fe(OH)2} &  \num{4.87d-17} &              \\
+       \ce{Fe(OH)3} &  \num{2.79d-39} &              \\
+         \ce{FeCO3} &  \num{3.13d-11} &              \\
+          \ce{FeF2} &   \num{2.36d-6} &              \\
+    \ce{FePO4.2H2O} &  \num{9.91d-16} &              \\
+           \ce{FeS} &                 &    \num{6d2} \\
+       \ce{Ga(OH)3} &  \num{7.28d-36} &              \\
+     \ce{Hg2(SCN)2} &   \num{3.2d-20} &              \\
+        \ce{Hg2Br2} &  \num{6.40d-23} &              \\
+       \ce{Hg2C2O4} &  \num{1.75d-13} &              \\
+        \ce{Hg2CO3} &   \num{3.6d-17} &              \\
+        \ce{Hg2Cl2} &  \num{1.43d-18} &              \\
+         \ce{Hg2F2} &   \num{3.10d-6} &              \\
+         \ce{Hg2I2} &   \num{5.2d-29} &              \\
+        \ce{Hg2SO4} &    \num{6.5d-7} &              \\
+         \ce{HgBr2} &   \num{6.2d-20} &              \\
+          \ce{HgI2} (red) &   \num{2.9d-29} &              \\
+           \ce{HgS} (black) &                 &  \num{2d-32} \\
+           \ce{HgS} (red) &                 &  \num{4d-33} \\
+       \ce{K2PtCl6} &   \num{7.48d-6} &              \\
+         \ce{KClO4} &   \num{1.05d-2} &              \\
+          \ce{KIO4} &   \num{3.71d-4} &              \\
+      \ce{La(IO3)3} &  \num{7.50d-12} &              \\
+        \ce{Li2CO3} &   \num{8.15d-4} &              \\
+        \ce{Li3PO4} &  \num{2.37d-11} &              \\
+           \ce{LiF} &   \num{1.84d-3} &              \\
+       \ce{Mg(OH)2} &  \num{5.61d-12} &              \\
+     \ce{Mg3(PO4)2} &  \num{1.04d-24} &              \\
+   \ce{MgC2O4.2H2O} &   \num{4.83d-6} &              \\
+    \ce{MgCO3.3H2O} &   \num{2.38d-6} &              \\
+    \ce{MgCO3.5H2O} &   \num{3.79d-6} &              \\
+         \ce{MgCO3} &   \num{6.82d-6} &              \\
+          \ce{MgF2} &  \num{5.16d-11} &              \\
+      \ce{Mn(IO3)2} &   \num{4.37d-7} &              \\
+   \ce{MnC2O4.2H2O} &   \num{1.70d-7} &              \\
+         \ce{MnCO3} &  \num{2.24d-11} &              \\
+           \ce{MnS} $(\alpha)$ &                 &    \num{3d7} \\
+     \ce{Nd2(CO3)3} &  \num{1.08d-33} &              \\
+      \ce{Ni(IO3)2} &   \num{4.71d-5} &              \\
+       \ce{Ni(OH)2} &  \num{5.48d-16} &              \\
+     \ce{Ni3(PO4)2} &  \num{4.74d-32} &              \\
+         \ce{NiCO3} &   \num{1.42d-7} &              \\
+      \ce{Pb(IO3)2} &  \num{3.69d-13} &              \\
+       \ce{Pb(OH)2} &  \num{1.43d-20} &              \\
+         \ce{PbBr2} &   \num{6.60d-6} &              \\
+         \ce{PbCO3} &  \num{7.40d-14} &              \\
+         \ce{PbCl2} &   \num{1.70d-5} &              \\
+          \ce{PbF2} &    \num{3.3d-8} &              \\
+          \ce{PbI2} &    \num{9.8d-9} &              \\
+         \ce{PbSO4} &   \num{2.53d-8} &              \\
+        \ce{PbSeO4} &   \num{1.37d-7} &              \\
+           \ce{PbS} &                 &   \num{3d-7} \\
+      \ce{Pd(SCN)2} &  \num{4.39d-23} &              \\
+       \ce{Pr(OH)3} &  \num{3.39d-24} &              \\
+      \ce{Ra(IO3)2} &   \num{1.16d-9} &              \\
+         \ce{RaSO4} &  \num{3.66d-11} &              \\
+        \ce{RbClO4} &   \num{3.00d-3} &              \\
+       \ce{Sc(OH)3} &  \num{2.22d-31} &              \\
+          \ce{ScF3} &  \num{5.81d-24} &              \\
+       \ce{Sn(OH)2} &  \num{5.45d-27} &              \\
+           \ce{SnS} &                 &   \num{1d-5} \\
+ \ce{Sr(IO3)2.6H2O} &   \num{4.55d-7} &              \\
+  \ce{Sr(IO3)2.H2O} &   \num{3.77d-7} &              \\
+      \ce{Sr(IO3)2} &   \num{1.14d-7} &              \\
+    \ce{Sr3(AsO4)2} &  \num{4.29d-19} &              \\
+         \ce{SrCO3} &  \num{5.60d-10} &              \\
+          \ce{SrF2} &   \num{4.33d-9} &              \\
+         \ce{SrSO4} &   \num{3.44d-7} &              \\
+       \ce{Tl(OH)3} &  \num{1.68d-44} &              \\
+       \ce{Tl2CrO4} &  \num{8.67d-13} &              \\
+        \ce{TlBrO3} &   \num{1.10d-4} &              \\
+          \ce{TlBr} &   \num{3.71d-6} &              \\
+          \ce{TlCl} &   \num{1.86d-4} &              \\
+         \ce{TlIO3} &   \num{3.12d-6} &              \\
+           \ce{TlI} &   \num{5.54d-8} &              \\
+         \ce{TlSCN} &   \num{1.57d-4} &              \\
+       \ce{Y(IO3)3} &  \num{1.12d-10} &              \\
+        \ce{Y(OH)3} &  \num{1.00d-22} &              \\
+      \ce{Y2(CO3)3} &  \num{1.03d-31} &              \\
+           \ce{YF3} &  \num{8.62d-21} &              \\
+ \ce{Zn(IO3)2.2H2O} &    \num{4.1d-6} &              \\
+       \ce{Zn(OH)2} &     \num{3d-17} &              \\
+    \ce{Zn3(AsO4)2} &   \num{2.8d-28} &              \\
+   \ce{ZnC2O4.2H2O} &   \num{1.38d-9} &              \\
+     \ce{ZnCO3.H2O} &  \num{5.42d-11} &              \\
+         \ce{ZnCO3} &  \num{1.46d-10} &              \\
+          \ce{ZnF2} &   \num{3.04d-2} &              \\
+    \ce{ZnSeO3.H2O} &   \num{1.59d-7} &              \\
+          \ce{ZnSe} &   \num{3.6d-26} &              \\
+           \ce{ZnS} (spharelite) &                 &   \num{2d-4} \\
+           \ce{ZnS} (wurtzite) &                 &   \num{3d-2} \\
+    \bottomrule
+    \end{supertabular}
+\end{footnotesize}
+
+
+\end{document}

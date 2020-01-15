@@ -1,0 +1,174 @@
+\documentclass[a4paper, 10pt]{article}
+
+%margens
+\usepackage[top=1cm, bottom=2cm, left=1cm, right=1cm, includefoot]{geometry}
+
+\label{conf_geral}
+\usepackage[utf8x]{inputenc} %caracteres acentuados
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[brazil]{babel}
+\usepackage{amsfonts, amssymb, amsmath, amsthm, commath, physics} % ver explicação em https://tex,stackexchange,com/questions/32100/what-does-each-ams-package-do
+\usepackage{mathtools}
+\usepackage{proof} %?
+%\usepackage{eulervm, bookman}
+\usepackage{marginnote} % nota de margem
+\usepackage{comment} % comentários longos no código
+\usepackage[font=small,labelfont=bf]{caption} %fonte das legendas
+\usepackage{lipsum} %gerador de lorota em Latim
+\usepackage{lscape}
+\usepackage{pdflscape}
+
+\label{conf_fonts}
+\usepackage[fontsize=10pt]{scrextend}
+%\usepackage{moresize}
+\usepackage[normalem]{ulem}
+
+\label{conf_graph}
+\usepackage{graphicx} %inserir figuras
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{wrapfig} %figuras rodeadas por texto
+
+\label{conf_SI}
+\usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
+\DeclareSIUnit{\atmosphere}{atm}
+\DeclareSIUnit{\calorie}{cal}
+\sisetup{output-decimal-marker = {.}, round-mode=off, add-decimal-zero=false} %números na forma 1,0 ao invés de 1,0
+
+\label{conf_spacing_par}
+\usepackage{xspace} %para correção de espaços
+\usepackage{setspace} %espaçamento entre linhas e opções mais comuns
+\singlespacing
+%\onehalfspacing
+%\doublespacing
+%\setstretch{1,1}
+\parindent 0ex %retirada de indentação de todos os parágrafos
+%\setlength\parskip{\baselineskip}
+\usepackage{parskip} %espaçamento entre parágrafos
+
+\label{conf_chemistry_packages}
+\usepackage[version=4]{mhchem} %pacote química
+\usepackage{chemfig}
+\renewcommand*\printatom[1]{\ensuremath{\mathsf{#1}}}
+\usepackage{elements}
+\usepackage{chemmacros}
+\chemsetup[acid-base]{p-style=slanted}
+\NewChemEqConstant{\Kc}{K-conc}{\mathrm{c}}
+\NewChemEqConstant{\Kp}{K-press}{\mathrm{p}}
+\usechemmodule{thermodynamics}
+
+\label{conf_table}
+\usepackage{array} %tabelas
+\usepackage{booktabs}
+\usepackage{makecell} %editar células em tabelas
+\renewcommand\theadalign{cb}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[1pt]}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{supertabular}
+
+\label{conf_head_footnote}
+\usepackage[absolute]{textpos}
+\usepackage{fancyhdr} %cabeçalhos e rodapé
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{}
+\fancyhead[C]{Formation constants for some complex ions em aqueous solutions at \SI{25}{\celsius} \\ Francisco Bustamante}
+\fancyhead[R]{}
+\setlength{\headheight}{55pt}
+\fancyfoot{}
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[R]{\footnotesize Page \thepage \,of \pageref*{LastPage}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\label{conf_xlop}
+\usepackage{xlop}
+\opset{decimalsepsymbol={,}}
+
+\label{conf_refs}
+\usepackage[super,sort&compress]{natbib} %numeração refs sobrescrito
+\usepackage{notoccite}
+\usepackage{lastpage} %possibilita se referir à última página
+\setcounter{secnumdepth}{3}
+\usepackage{hyperref} % referências cruzadas
+
+\label{conf_id_doc}
+%identificação do documento
+\author{Prof. Francisco Bustamante}
+\title{\textit{Formation constants for some complex ions em aqueous solutions at \SI{25}{\celsius}Solubility product constants}}
+\date{2019}
+
+\begin{document}
+
+\small
+
+\twocolumn
+
+Reference: Dean, J. A. \textit{Lange's Handbook of Chemistry}, 15th Edition, New York: McGraw-Hill Publishers, 1999.
+
+\tablehead{%
+    \toprule
+    Formation Equilibrium &             $K$  \\
+    \midrule
+}
+
+\begin{footnotesize}
+    \begin{supertabular}{ll}
+    \ce{Ag+ + 2Br- <=> [AgBr2]-} &   \num{2.14d7} \\
+    \ce{Ag+ + 2Cl- <=> [AgCl2]-} &   \num{1.09d5} \\
+    \ce{Ag+ + 2CN- <=> [Ag(CN)2]-} &  \num{1.26d21} \\
+    \ce{Ag+ + 2S2O3^{2-} <=> [Ag(S2O3)2]^{3-}} &  \num{2.88d13} \\
+    \ce{Ag+ + 2NH3 <=> [Ag(NH3)2]+} &   \num{1.12d7} \\
+    \ce{Al^{3+} + 6F- <=> [AlF6]^{3-}} &  \num{6.92d19} \\
+    \ce{Al^{3+} + 4OH- <=> [Al(OH)4]-} &  \num{1.07d33} \\
+    \ce{Au+ + 2CN- <=> [Au(CN)2]-} &  \num{2.00d38} \\
+    \ce{Cd^{2+} + 4CN- <=> [Cd(CN)4]^{2-}} &  \num{6.02d18} \\
+    \ce{Cd^{2+} + 4I- <=> [CdI4]^{2-}} &  \num{2.57d5} \\
+    \ce{Cd^{2+} + 4NH3 <=> [Cd(NH3)4]^{2+}} &   \num{1.32d7} \\
+    \ce{Co^{2+} + edta <=> [Co(edta)]^{2+}} & \num{2.04d16} \\
+    \ce{Co^{2+} + 3en <=> [Co(en)3]^{2+}} & \num{8.71d13} \\
+    \ce{Co^{2+} + 6NH3 <=> [Co(NH3)6]^{2+}} &   \num{1.29d5} \\
+    \ce{Co^{3+} + edta <=> [Co(edta)]^{3+}} & \num{1d36} \\
+    \ce{Co^{3+} + 3en <=> [Co(en)3]^{3+}} & \num{4.90d48} \\
+    \ce{Co^{3+} + 6NH3 <=> [Co(NH3)6]^{3+}} &   \num{1.58d35} \\
+    \ce{Cr^{2+} + edta <=> [Cr(edta)]^{2+}} & \num{3.98d13} \\
+    \ce{Cr^{3+} + edta <=> [Cr(edta)]^{3+}} & \num{1d23} \\
+    \ce{Cu+ + 2CN- <=> [Cu(CN)2]-} &  \num{1.00d24} \\
+    \ce{Cu+ + 2Cl- <=> [CuCl2]-} &   \num{3.16d5} \\
+    \ce{Cr^{3+} + 4OH- <=> [Cr(OH)4]-} &  \num{7.94d29} \\
+    \ce{Cu^{2+} + edta <=> [Cu(edta)]^{2+}} &  \num{5.01d18} \\
+    \ce{Cu^{2+} + 4NH3 <=> [Cu(NH3)4]^{2+}} &  \num{2.09d13} \\
+    \ce{Fe^{2+} + 6CN- <=> [Fe(CN)6]^{4-}} &  \num{1d35} \\
+    \ce{Fe^{2+} + edta <=> [Fe(edta)]^{2+}} & \num{2.14d14} \\
+    \ce{Fe^{2+} + 3en <=> [Fe(en)3]^{2+}} & \num{5.01d9} \\
+    \ce{Fe^{3+} + 6CN- <=> [Fe(CN)6]^{3-}} &  \num{1d42} \\
+    \ce{Fe^{3+} + edta <=> [Fe(edta)]^{3+}} & \num{1.70d24} \\
+    \ce{Hg^{2+} + 4Cl- <=> [HgCl4]^{2-}} &  \num{1.17d15} \\
+    \ce{Hg^{2+} + 4CN- <=> [Hg(CN)4]^{2-}} &  \num{2.51d41} \\
+    \ce{Hg^{2+} + edta <=> [Hg(edta)]^{2+}} & \num{6.31d21} \\
+    \ce{Hg^{2+} + 4NH3 <=> [Hg(NH3)4]^{2+}} &  \num{1.90d19} \\
+    \ce{Mn^{2+} + edta <=> [Mn(edta)]^{2+}} & \num{6.31d13} \\
+    \ce{Ni^{2+} + 4CN- <=> [Ni(CN)4]^{2-}} &  \num{2.00d31} \\
+    \ce{Ni^{2+} + 6NH3 <=> [Ni(NH3)6]^{2+}} &   \num{5.49d8} \\
+    \ce{Pb^{2+} + 4I- <=> [PbI4]^{2-}} &  \num{2.95d4} \\
+    \ce{Pd^{2+} + 4Cl- <=> [PdCl4]^{2-}} &  \num{5.01d15} \\
+    \ce{Pt^{2+} + 4Cl- <=> [PtCl4]^{2-}} &  \num{1.00d16} \\
+    \ce{Pt^{2+} + 6NH3 <=> [Pt(NH3)6]^{2+}} &   \num{2.00d35} \\
+    \ce{Zn^{2+} + edta <=> [Zn(edta)]^{2+}} & \num{2.51d16} \\
+    \ce{Zn^{2+} + 3en <=> [Zn(en)3]^{2+}} & \num{1.29d14} \\
+    \ce{Zn^{2+} + 4OH- <=> [Zn(OH)4]^{2-}} &  \num{4.57d17} \\
+    \ce{Zn^{2+} + 4NH3 <=> [Zn(NH3)4]^{2+}} &   \num{2.88d9} \\
+    \bottomrule
+    \end{supertabular}
+\end{footnotesize}
+
+en $=$ ethylenediamine
+
+edta $=$ ethylenediamine-\textit{N,N,N',N'}-tetraacetic acid
+
+\end{document}
