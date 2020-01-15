@@ -1,57 +1,19 @@
 \documentclass[a4paper, 10pt]{article}
 
-%margens
 \usepackage[top=1cm, bottom=2cm, left=1cm, right=1cm, includefoot]{geometry}
-
-\label{conf_geral}
-% \usepackage[utf8x]{inputenc}
-\usepackage{color}
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-% \usepackage[brazil]{babel}
-\usepackage{amsfonts, amssymb, amsmath, amsthm, commath, physics}
-\usepackage{mathtools}
-\usepackage{proof} %?
-%\usepackage{eulervm, bookman}
-\usepackage{marginnote} % nota de margem
-\usepackage{comment} % comentários longos no código
-\usepackage[font=small,labelfont=bf]{caption} %fonte das legendas
-\usepackage{lipsum} %gerador de lorota em Latim
-\usepackage{lscape}
-\usepackage{pdflscape}
-
-\label{conf_fonts}
-\usepackage[fontsize=10pt]{scrextend}
-%\usepackage{moresize}
-\usepackage[normalem]{ulem}
-
-\label{conf_graph}
-\usepackage{graphicx} %inserir figuras
-\usepackage{float}
-\usepackage{tikz}
-\usepackage{wrapfig} %figuras rodeadas por texto
 
 \label{conf_SI}
 \usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
-\DeclareSIUnit{\atmosphere}{atm}
-\DeclareSIUnit{\calorie}{cal}
-\sisetup{output-decimal-marker = {.}, round-mode=off, add-decimal-zero=false} %números na forma 1,0 ao invés de 1,0
+\sisetup{output-decimal-marker = {.}, round-mode=off, add-decimal-zero=false}
 
 \label{conf_spacing_par}
-\usepackage{xspace} %para correção de espaços
-\usepackage{setspace} %espaçamento entre linhas e opções mais comuns
+\usepackage{xspace}
+\usepackage{setspace}
 \singlespacing
-%\onehalfspacing
-%\doublespacing
-%\setstretch{1,1}
-\parindent 0ex %retirada de indentação de todos os parágrafos
-%\setlength\parskip{\baselineskip}
-\usepackage{parskip} %espaçamento entre parágrafos
+\parindent 0ex
 
 \label{conf_chemistry_packages}
-\usepackage[version=4]{mhchem} %pacote química
-\usepackage{chemfig}
-\renewcommand*\printatom[1]{\ensuremath{\mathsf{#1}}}
-\usepackage{elements}
+\usepackage[version=4]{mhchem}
 \usepackage{chemmacros}
 \chemsetup[acid-base]{p-style=slanted}
 \NewChemEqConstant{\Kc}{K-conc}{\mathrm{c}}
@@ -59,22 +21,12 @@
 \usechemmodule{thermodynamics}
 
 \label{conf_table}
-\usepackage{array} %tabelas
 \usepackage{booktabs}
-\usepackage{makecell} %editar células em tabelas
-\renewcommand\theadalign{cb}
-\renewcommand\theadfont{\bfseries}
-\renewcommand\theadgape{\Gape[4pt]}
-\renewcommand\cellgape{\Gape[1pt]}
-\usepackage{multirow}
-\usepackage{colortbl}
-\usepackage{longtable}
-\usepackage{multicol}
 \usepackage{supertabular}
 
 \label{conf_head_footnote}
 \usepackage[absolute]{textpos}
-\usepackage{fancyhdr} %cabeçalhos e rodapé
+\usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[L]{}
@@ -86,20 +38,12 @@
 \fancyfoot[R]{\footnotesize Page \thepage \,of \pageref*{LastPage}}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
-\label{conf_xlop}
-\usepackage{xlop}
-\opset{decimalsepsymbol={,}}
-
 \label{conf_refs}
-\usepackage[super,sort&compress]{natbib} %numeração refs sobrescrito
-\usepackage{notoccite}
-\usepackage{lastpage} %possibilita se referir à última página
-\setcounter{secnumdepth}{3}
-\usepackage{hyperref} % referências cruzadas
+\usepackage{lastpage}
+\usepackage{hyperref}
 
 \label{conf_id_doc}
-%identificação do documento
-\author{Prof. Francisco Bustamante}
+\author{Francisco Bustamante}
 \title{\textit{Dissociation constants}}
 \date{2019}
 
@@ -109,20 +53,31 @@
 
 \twocolumn
 
-The data in these tables are presented as values of \pKa, defined as the negative logarithm of the acid dissociation constant \Ka\, for the reaction \ce{BH <=> B- + H+}
+The data in these tables are presented as values of \pKa, defined as the negative
+logarithm of the acid dissociation constant \Ka\, for the reaction \ce{BH <=> B- + H+}
 
-Thus $\pKa = -\log \Ka$, and the hydrogen ion concentration \ce{[H+]} can be calculated from
+Thus $\pKa = -\log \Ka$, and the hydrogen ion concentration \ce{[H+]} can be
+calculated from
+%
 \begin{align*}
     \Ka = \frac{\ce{[H^+][B^-]}}{\ce{[BH]}}
 \end{align*}
-In the case of bases, the entry in the table is for the conjugate acid; e.g., ammonium ion for ammonia. The \ce{OH-} concentration in the system \ce{NH3 + H2O <=> NH4+ + OH-} can be calculated from the equation
+%
+In the case of bases, the entry in the table is for the conjugate acid; e.g.,
+ammonium ion for ammonia. The \ce{OH-} concentration in the system
+\ce{NH3 + H2O <=> NH4+ + OH-} can be calculated from the equation
+%
 \begin{align*}
     \Kb = \frac{K_{water}}{\Ka} = \frac{\ce{[OH^-][NH4^+]}}{\ce{[NH3]}}
 \end{align*}
-where $K_{water} = \num{1.01d-14}$ at \SI{25}{\celsius}. Note that $\pKa + \pKb = pK_{water}$. All values refer to dilute aqueous solutions at zero ionic strength
-at the temperature indicated. The tables are arranged alphabetically by compound name.
+%
+where $K_{water} = \num{1.01d-14}$ at \SI{25}{\celsius}. Note that
+$\pKa + \pKb = pK_{water}$. All values refer to dilute aqueous solutions at zero
+ionic strength at the temperature indicated. The tables are arranged
+alphabetically by compound name.
 
-Reference: Rumble, J. \textit{CRC Handbook of Chemistry and Physics}, 98th Edition, CRC Press LLC, 2017.
+Reference: Rumble, J. \textit{CRC Handbook of Chemistry and Physics}, 98th
+Edition, CRC Press LLC, 2017.
 
 \begin{center}
     \begin{large}
@@ -132,80 +87,80 @@ Reference: Rumble, J. \textit{CRC Handbook of Chemistry and Physics}, 98th Editi
 
 \tablehead{%
     \toprule
-    Name &       Formula & Step & T/\si{\celsius} &           pKa \\
+    Name                            & Formula      & Step & T/\si{\celsius} & pKa \\
     \midrule
 }
 
 \begin{footnotesize}
-    \begin{supertabular}{lllll}
-        Aluminum ion \ce{[Al^{+3}]} &     \ce{Al^{+3}} &      &   25 &     \num{5.0} \\
-               Ammonia &      \ce{NH3} &      &   25 &    \num{9.25} \\
-          Arsenic acid &   \ce{H3AsO4} &    1 &   25 &    \num{2.26} \\
-                       &         \ce{} &    2 &   25 &    \num{6.76} \\
-                       &         \ce{} &    3 &   25 &   \num{11.29} \\
-        Arsenious acid &   \ce{H3AsO3} &      &   25 &    \num{9.29} \\
-     Barium ion \ce{[Ba^{+2}]} &     \ce{Ba^{+2}} &      &   25 &    \num{13.4} \\
-            Boric acid &    \ce{H3BO3} &    1 &   20 &    \num{9.27} \\
-                       &         \ce{} &    2 &   20 &     \num{14} \\
-    Calcium ion \ce{[Ca^{+2}]} &     \ce{Ca^{+2}} &      &   25 &    \num{12.6} \\
-         Carbonic acid &    \ce{H2CO3} &    1 &   25 &    \num{6.35} \\
-                       &         \ce{} &    2 &   25 &   \num{10.33} \\
-         Chlorous acid &    \ce{HClO2} &      &   25 &    \num{1.94} \\
-          Chromic acid &   \ce{H2CrO4} &    1 &   25 &    \num{0.74} \\
-                       &         \ce{} &    2 &   25 &    \num{6.49} \\
-           Cyanic acid &     \ce{HOCN} &      &   25 &    \num{3.46} \\
-     Diphosphoric acid &   \ce{H4P2O7} &    1 &   25 &    \num{0.91} \\
-                       &         \ce{} &    2 &   25 &    \num{2.10} \\
-                       &         \ce{} &    3 &   25 &    \num{6.70} \\
-                       &         \ce{} &    4 &   25 &    \num{9.32} \\
-         Germanic acid &   \ce{H2GeO3} &    1 &   25 &    \num{9.01} \\
-                       &         \ce{} &    2 &   25 &    \num{12.3} \\
-             Hydrazine &     \ce{N2H4} &      &   25 &     \num{8.1} \\
-        Hydrazoic acid &      \ce{HN3} &      &   25 &     \num{4.6} \\
-      Hydrogen cyanide &      \ce{HCN} &      &   25 &    \num{9.21} \\
-     Hydrogen fluoride &       \ce{HF} &      &   25 &    \num{3.20} \\
-     Hydrogen peroxide &     \ce{H2O2} &      &   25 &   \num{11.62} \\
-     Hydrogen selenide &     \ce{H2Se} &    1 &   25 &    \num{3.89} \\
-                       &         \ce{} &    2 &   25 &    \num{11.0} \\
-      Hydrogen sulfide &      \ce{H2S} &    1 &   25 &    \num{7.05} \\
-                       &         \ce{} &    2 &   25 &      \num{19} \\
-    Hydrogen telluride &     \ce{H2Te} &    1 &   18 &     \num{2.6} \\
-                       &         \ce{} &    2 &   25 &      \num{11} \\
-         Hydroxylamine &    \ce{H2NOH} &      &   25 &    \num{5.94} \\
-      Hypobromous acid &     \ce{HOBr} &      &   25 &    \num{8.55} \\
-     Hypochlorous acid &     \ce{HOCl} &      &   25 &    \num{7.40} \\
-       Hypoiodous acid &      \ce{HIO} &      &   25 &    \num{10.5} \\
-            Iodic acid &     \ce{HIO3} &      &   25 &    \num{0.78} \\
-     Lithium ion \ce{[Li^{+}]} &      \ce{Li^{+}} &      &   25 &    \num{13.8} \\
-  Magnesium ion \ce{[Mg^{+2}]} &     \ce{Mg^{+2}} &      &   25 &    \num{11.4} \\
-          Nitrous acid &     \ce{HNO2} &      &   25 &    \num{3.25} \\
-     Orthosilicic acid &   \ce{H4SiO4} &    1 &   30 &     \num{9.9} \\
-                       &         \ce{} &    2 &   30 &    \num{11.8} \\
-                       &         \ce{} &    3 &   30 &      \num{12} \\
-                       &         \ce{} &    4 &   30 &      \num{12} \\
-       Perchloric acid &    \ce{HClO4} &      &   20 &    \num{-1.6} \\
-         Periodic acid &     \ce{HIO4} &      &   25 &    \num{1.64} \\
-       Phosphonic acid &    \ce{H3PO3} &    1 &   20 &     \num{1.3} \\
-                       &         \ce{} &    2 &   20 &    \num{6.70} \\
-       Phosphoric acid &    \ce{H3PO4} &    1 &   25 &    \num{2.16} \\
-                       &         \ce{} &    2 &   25 &    \num{7.21} \\
-                       &         \ce{} &    3 &   25 &   \num{12.32} \\
-          Selenic acid &   \ce{H2SeO4} &    2 &   25 &     \num{1.7} \\
-         Selenous acid &   \ce{H2SeO3} &    1 &   25 &    \num{2.62} \\
-                       &         \ce{} &    2 &   25 &    \num{8.32} \\
-      Sodium ion \ce{[Na^{+}]} &      \ce{Na^{+}} &      &   25 &    \num{14.8} \\
-  Strontium ion \ce{[Sr^{+2}]} &     \ce{Sr^{+2}} &      &   25 &    \num{13.2} \\
-         Sulfamic acid &  \ce{H2NSO3H} &      &   25 &    \num{1.05} \\
-         Sulfuric acid &    \ce{H2SO4} &    2 &   25 &    \num{1.99} \\
-        Sulfurous acid &    \ce{H2SO3} &    1 &   25 &    \num{1.85} \\
-                       &         \ce{} &    2 &   25 &     \num{7.2} \\
-     Telluric(VI) acid &   \ce{H6TeO6} &    1 &   18 &    \num{7.68} \\
-                       &         \ce{} &    2 &   18 &    \num{11.0} \\
-        Tellurous acid &   \ce{H2TeO3} &    1 &   25 &    \num{6.27} \\
-                       &         \ce{} &    2 &   25 &    \num{8.43} \\
- Tetrafluoroboric acid &     \ce{HBF4} &      &   25 &     \num{0.5} \\
-       Thiocyanic acid &     \ce{HCNS} &      &   25 &    \num{-1.8} \\
-                 Water &      \ce{H2O} &      &   25 &  \num{13.995} \\
+    \begin{supertabular}{llccl}
+        Aluminum ion \ce{[Al^{+3}]} & \ce{Al^{+3}} &      & 25              & \num{5.0} \\
+               Ammonia              & \ce{NH3}     &      & 25              & \num{9.25} \\
+          Arsenic acid              & \ce{H3AsO4}  & 1    & 25              & \num{2.26} \\
+                                    & \ce{}        & 2    & 25              & \num{6.76} \\
+                                    & \ce{}        & 3    & 25              & \num{11.29} \\
+        Arsenious acid              & \ce{H3AsO3}  &      & 25              & \num{9.29} \\
+     Barium ion \ce{[Ba^{+2}]}      & \ce{Ba^{+2}} &      & 25              & \num{13.4} \\
+            Boric acid              & \ce{H3BO3}   & 1    & 20              & \num{9.27} \\
+                                    & \ce{}        & 2    & 20              & \num{14} \\
+    Calcium ion \ce{[Ca^{+2}]}      & \ce{Ca^{+2}} &      & 25              & \num{12.6} \\
+         Carbonic acid              & \ce{H2CO3}   & 1    & 25              & \num{6.35} \\
+                                    & \ce{}        & 2    & 25              & \num{10.33} \\
+         Chlorous acid              & \ce{HClO2}   &      & 25              & \num{1.94} \\
+          Chromic acid              & \ce{H2CrO4}  & 1    & 25              & \num{0.74} \\
+                                    & \ce{}        & 2    & 25              & \num{6.49} \\
+           Cyanic acid              & \ce{HOCN}    &      & 25              & \num{3.46} \\
+     Diphosphoric acid              & \ce{H4P2O7}  & 1    & 25              & \num{0.91} \\
+                                    & \ce{}        & 2    & 25              & \num{2.10} \\
+                                    & \ce{}        & 3    & 25              & \num{6.70} \\
+                                    & \ce{}        & 4    & 25              & \num{9.32} \\
+         Germanic acid              & \ce{H2GeO3}  & 1    & 25              & \num{9.01} \\
+                                    & \ce{}        & 2    & 25              & \num{12.3} \\
+             Hydrazine              & \ce{N2H4}    &      & 25              & \num{8.1} \\
+        Hydrazoic acid              & \ce{HN3}     &      & 25              & \num{4.6} \\
+      Hydrogen cyanide              & \ce{HCN}     &      & 25              & \num{9.21} \\
+     Hydrogen fluoride              & \ce{HF}      &      & 25              & \num{3.20} \\
+     Hydrogen peroxide              & \ce{H2O2}    &      & 25              & \num{11.62} \\
+     Hydrogen selenide              & \ce{H2Se}    & 1    & 25              & \num{3.89} \\
+                                    & \ce{}        & 2    & 25              & \num{11.0} \\
+      Hydrogen sulfide              & \ce{H2S}     & 1    & 25              & \num{7.05} \\
+                                    & \ce{}        & 2    & 25              & \num{19} \\
+    Hydrogen telluride              & \ce{H2Te}    & 1    & 18              & \num{2.6} \\
+                                    & \ce{}        & 2    & 25              & \num{11} \\
+         Hydroxylamine              & \ce{H2NOH}   &      & 25              & \num{5.94} \\
+      Hypobromous acid              & \ce{HOBr}    &      & 25              & \num{8.55} \\
+     Hypochlorous acid              & \ce{HOCl}    &      & 25              & \num{7.40} \\
+       Hypoiodous acid              & \ce{HIO}     &      & 25              & \num{10.5} \\
+            Iodic acid              & \ce{HIO3}    &      & 25              & \num{0.78} \\
+     Lithium ion \ce{[Li^{+}]}      & \ce{Li^{+}}  &      & 25              & \num{13.8} \\
+  Magnesium ion \ce{[Mg^{+2}]}      & \ce{Mg^{+2}} &      & 25              & \num{11.4} \\
+          Nitrous acid              & \ce{HNO2}    &      & 25              & \num{3.25} \\
+     Orthosilicic acid              & \ce{H4SiO4}  & 1    & 30              & \num{9.9} \\
+                                    & \ce{}        & 2    & 30              & \num{11.8} \\
+                                    & \ce{}        & 3    & 30              & \num{12} \\
+                                    & \ce{}        & 4    & 30              & \num{12} \\
+       Perchloric acid              & \ce{HClO4}   &      & 20              & \num{-1.6} \\
+         Periodic acid              & \ce{HIO4}    &      & 25              & \num{1.64} \\
+       Phosphonic acid              & \ce{H3PO3}   & 1    & 20              & \num{1.3} \\
+                                    & \ce{}        & 2    & 20              & \num{6.70} \\
+       Phosphoric acid              & \ce{H3PO4}   & 1    & 25              & \num{2.16} \\
+                                    & \ce{}        & 2    & 25              & \num{7.21} \\
+                                    & \ce{}        & 3    & 25              & \num{12.32} \\
+          Selenic acid              & \ce{H2SeO4}  & 2    & 25              & \num{1.7} \\
+         Selenous acid              & \ce{H2SeO3}  & 1    & 25              & \num{2.62} \\
+                                    & \ce{}        & 2    & 25              & \num{8.32} \\
+      Sodium ion \ce{[Na^{+}]}      & \ce{Na^{+}}  &      & 25              & \num{14.8} \\
+  Strontium ion \ce{[Sr^{+2}]}      & \ce{Sr^{+2}} &      & 25              & \num{13.2} \\
+         Sulfamic acid              & \ce{H2NSO3H} &      & 25              & \num{1.05} \\
+         Sulfuric acid              & \ce{H2SO4}   & 2    & 25              & \num{1.99} \\
+        Sulfurous acid              & \ce{H2SO3}   & 1    & 25              & \num{1.85} \\
+                                    & \ce{}        & 2    & 25              & \num{7.2} \\
+     Telluric(VI) acid              & \ce{H6TeO6}  & 1    & 18              & \num{7.68} \\
+                                    & \ce{}        & 2    & 18              & \num{11.0} \\
+        Tellurous acid              & \ce{H2TeO3}  & 1    & 25              & \num{6.27} \\
+                                    & \ce{}        & 2    & 25              & \num{8.43} \\
+ Tetrafluoroboric acid              & \ce{HBF4}    &      & 25              & \num{0.5} \\
+       Thiocyanic acid              & \ce{HCNS}    &      & 25              & \num{-1.8} \\
+                 Water              & \ce{H2O}     &      & 25              & \num{13.995} \\
     \bottomrule
     \end{supertabular}
 \end{footnotesize}
@@ -218,40 +173,40 @@ Reference: Rumble, J. \textit{CRC Handbook of Chemistry and Physics}, 98th Editi
 
 \tablehead{%
     \toprule
-    Name &       Formula & Step & T/\si{\celsius} &           pKa \\
+    Name                     & Formula            & Step & T/\si{\celsius} & pKa \\
     \midrule
 }
 
 \begin{footnotesize}
-    \begin{supertabular}{lllll}
-        Acetic acid & \ce{CH3COOH} & & 25 & \num{4,756} \\
-        L-ascorbic acid & \ce{C6H6O6} & 1 & 25 & \num{4,04} \\
-        & & 2 & 16 & \num{11,7} \\
-        Aniline & \ce{C6H5NH2} & & 25 & \num{4,87} \\
-        Benzenesulfonic acid & \ce{C6H5SO3H} & & 25 & \num{0,70} \\
-        Benzoic acid & \ce{C6H5COOH} & & 25 & \num{4,204} \\
-        Citric acid & \ce{H3C6H5O7} & 1 & 25 & \num{3,13} \\
-        & & 2 & 25 & \num{4,76} \\
-        & & 3 & 25 & \num{6,40} \\
-        Chloroacetic acid & \ce{CH2ClCOOH} & & 25 & \num{2,85} \\
-        Dimethylamine & \ce{(CH3)2NH} & & 25 & \num{10,73} \\
-        Ethylamine & \ce{C2H5NH2} & & 25 & \num{10,65} \\
-        Ethylenediamine & \ce{H2NCH2CH2NH2} & 1 & 25 & \num{9,92} \\
-        & & 2 & 25 & \num{6,86} \\
-        Formic acid & \ce{HCO2H} & & 25 & \num{3,75} \\
-        D-Lactic acid & \ce{CH3CH(OH)COOH} & & 25 & \num{3,86} \\
-        Methylamine & \ce{CH3NH2} &  & 25 & \num{10,66} \\
-        Morphine & \ce{C17H19NO3} & 1 & 25 & \num{8,21} \\
-        & & 2 & 20 & \num{9,85} \\
-        L-Nicotine & \ce{C10H14N2} & 1 & 25 & \num{8,02} \\
-        & & 2 & 25 & \num{3,12} \\
-        Oxalic acid & \ce{HOOCCOOH} & 1 & 25 & \num{1,25} \\
-        & & 2 & 25 & \num{3,81} \\
-        Phenol & \ce{C6H5OH} & & 25 & \num{9,99} \\
-        Pyridine & \ce{C5H5N} & & 25 & \num{5,23} \\
-        Trichloroacetic acid & \ce{CCl3COOH} & & 25 & \num{0,66} \\
-        Trimethylamine & \ce{(CH3)3N} & & 25 & \num{9,80} \\
-        Urea & \ce{CO(NH2)2} & & 25 & \num{0,10} \\
+    \begin{supertabular}{llc@{\hspace{2.0mm}}c@{\hspace{2.0mm}}l}
+        Acetic acid          & \ce{CH3COOH}       &      & 25              & \num{4,756} \\
+        L-ascorbic acid      & \ce{C6H6O6}        & 1    & 25              & \num{4,04} \\
+                             &                    & 2    & 16              & \num{11,7} \\
+        Aniline              & \ce{C6H5NH2}       &      & 25              & \num{4,87} \\
+        Benzenesulfonic acid & \ce{C6H5SO3H}      &      & 25              & \num{0,70} \\
+        Benzoic acid         & \ce{C6H5COOH}      &      & 25              & \num{4,204} \\
+        Citric acid          & \ce{H3C6H5O7}      & 1    & 25              & \num{3,13} \\
+                             &                    & 2    & 25              & \num{4,76} \\
+                             &                    & 3    & 25              & \num{6,40} \\
+        Chloroacetic acid    & \ce{CH2ClCOOH}     &      & 25              & \num{2,85} \\
+        Dimethylamine        & \ce{(CH3)2NH}      &      & 25              & \num{10,73} \\
+        Ethylamine           & \ce{C2H5NH2}       &      & 25              & \num{10,65} \\
+        Ethylenediamine      & \ce{H2NCH2CH2NH2}  & 1    & 25              & \num{9,92} \\
+                             &                    & 2    & 25              & \num{6,86} \\
+        Formic acid          & \ce{HCO2H}         &      & 25              & \num{3,75} \\
+        D-Lactic acid        & \ce{CH3CH(OH)COOH} &      & 25              & \num{3,86} \\
+        Methylamine          & \ce{CH3NH2}        &      & 25              & \num{10,66} \\
+        Morphine             & \ce{C17H19NO3}     & 1    & 25              & \num{8,21} \\
+                             &                    & 2    & 20              & \num{9,85} \\
+        L-Nicotine           & \ce{C10H14N2}      & 1    & 25              & \num{8,02} \\
+                             &                    & 2    & 25              & \num{3,12} \\
+        Oxalic acid          & \ce{HOOCCOOH}      & 1    & 25              & \num{1,25} \\
+                             &                    & 2    & 25              & \num{3,81} \\
+        Phenol               & \ce{C6H5OH}        &      & 25              & \num{9,99} \\
+        Pyridine             & \ce{C5H5N}         &      & 25              & \num{5,23} \\
+        Trichloroacetic acid & \ce{CCl3COOH}      &      & 25              & \num{0,66} \\
+        Trimethylamine       & \ce{(CH3)3N}       &      & 25              & \num{9,80} \\
+        Urea                 & \ce{CO(NH2)2}      &      & 25              & \num{0,10} \\
     \bottomrule
     \end{supertabular}
 \end{footnotesize}
