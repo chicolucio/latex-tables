@@ -1,0 +1,617 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[top=1cm, bottom=2cm, left=1cm, right=1cm, includefoot]{geometry}
+
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{tikz}
+
+\sisetup{output-decimal-marker = {.}}
+\sisetup{retain-explicit-plus = true}
+
+\usepackage{setspace}
+\singlespacing
+\parindent 0ex
+\usepackage{parskip} %espaçamento entre parágrafos
+\usepackage{lastpage}
+
+\usepackage[font=small,labelfont=bf]{caption}
+
+\label{conf_chemistry_packages}
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+\renewcommand*\printatom[1]{\ensuremath{\mathsf{#1}}}
+\usepackage{elements}
+
+\usepackage{tcolorbox}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{}
+\fancyhead[C]{Latimer diagrams \\ Francisco Bustamante}
+\fancyhead[R]{}
+\setlength{\headheight}{55pt}
+\fancyfoot{}
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[R]{\footnotesize Page \thepage \,of \pageref*{LastPage}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{tikz,bm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Francisco Bustamante}
+\title{Latimer diagrams}
+\date{2019}
+
+\begin{document}
+
+The standard potentials quoted here are presented in the form of Latimer diagrams
+ and are arranged according to the groups of the periodic table. Data and species in parentheses are uncertain. Most of the data, together with
+occasional corrections, come from \textit{Inorganic Chemistry} 5th ed. by Atkins et. al. and \textit{Inorganic Chemistry} 5th ed. by Miessler et. al.
+ \colorbox{gray!20}{Diagrams with grey background are for basic solutions}.
+
+\section*{Group 1}
+\label{sec:group1}
+\addcontentsline{toc}{section}{\nameref{sec:group1}}
+
+
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\ce{H+ ->[\num{0}] H2 ->[\num{-2,25}] H-}
+
+	\ce{Li+ ->[\num{-3,040}] Li}
+
+	\ce{Na+ ->[\num{-2,714}] Na}
+
+	\ce{K+ ->[\num{-2,936}] K}
+
+	\ce{Rb+ ->[\num{-2,923}] Rb}
+
+	\ce{Cs+ ->[\num{-3,026}] Cs}
+\end{minipage}
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\colorbox{gray!20}{
+	\ce{H2O ->[\num{-0,828}] H2 ->[\num{-2,25}] H-}
+}
+\\ \\ \\ \\ \\
+\end{minipage}
+
+\section*{Group 2}
+\label{sec:group2}
+\addcontentsline{toc}{section}{\nameref{sec:group2}}
+
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\ce{Be^{2+} ->[\num{-1,97}] Be}
+
+	\ce{Mg^{2+} ->[\num{-2,36}] Mg}
+
+	\ce{Ca^{2+} ->[\num{-2,87}] Ca}
+
+	\ce{Sr^{2+} ->[\num{-2,89}] Sr}
+
+	\ce{Ba^{2+} ->[\num{-2,91}] Ba}
+
+	\ce{Ra^{2+} ->[\num{-2,92}] Ra}
+\end{minipage}
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\colorbox{gray!20}{ \ce{Be2O3^{2-} ->[\num{+2,62}] Be} }
+
+	\colorbox{gray!20}{ \ce{Mg(OH)2 ->[\num{-2,69}] Mg} }
+
+	\colorbox{gray!20}{ \ce{Ca(OH)2 ->[\num{-3,03}] Ca} }
+
+	\colorbox{gray!20}{ \ce{Sr(OH)2 ->[\num{-2,88}] Sr} }
+
+	\colorbox{gray!20}{ \ce{Ba(OH)2 ->[\num{-2,81}] Ba} }
+	\\
+\end{minipage}
+
+\section*{Group 3}
+\label{sec:group3}
+\addcontentsline{toc}{section}{\nameref{sec:group3}}
+
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\ce{Sc^{3+} ->[\num{-2,03}] Sc}
+
+	\ce{Y^{3+} ->[\num{-2,37}] Y}
+
+	\ce{La^{3+} ->[\num{-2,38}] La}
+
+	\ce{Ac^{3+} ->[\num{-4,9}] (Ac^{2+}) ->[\num{-0,7}] Ac}
+\end{minipage}
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\colorbox{gray!20}{ \ce{Sc(OH)3 ->[\num{-2,60}] Sc} }
+
+	\colorbox{gray!20}{ \ce{Y(OH)3 ->[\num{-2,85}] Y} }
+
+	\colorbox{gray!20}{ \ce{La(OH)3 ->[\num{-2,80}] La} }
+	\\
+\end{minipage}
+
+\section*{Group 4}
+\label{sec:group4}
+\addcontentsline{toc}{section}{\nameref{sec:group4}}
+
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\ce{TiO^{2+} ->[\num{+0,10}] Ti^{3+} ->[\num{-0,37}] Ti^{2+} ->[\num{-1,63}] Ti}
+
+	\ce{TiO2 ->[\num{-0,56}] Ti2O3 ->[\num{-1,23}] TiO ->[\num{-1,31}] Ti}
+
+	\ce{Zr^{4+} ->[\num{-1,55}] Zr}
+
+	\ce{Hf^{4+} ->[\num{-1,70}] Hf}
+\end{minipage}
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\hfill \break
+
+	\colorbox{gray!20}{ \ce{TiO2 ->[\num{-1,38}] Ti2O3 ->[\num{-1,95}] TiO ->[\num{-2,13}] Ti} }
+\hfill \break
+
+	\colorbox{gray!20}{ \ce{HfO(OH)2 ->[\num{-2,50}] Hf} }
+
+\end{minipage}
+
+\section*{Group 5}
+\label{sec:group5}
+\addcontentsline{toc}{section}{\nameref{sec:group5}}
+
+	\ce{[V(OH)]^{4+} ->[\num{+1,000}] VO^{2+} ->[\num{+0,337}] V^{3+} ->[\num{-0,255}] V^{2+} ->[\num{-1,13}] V}
+
+\hfill\colorbox{gray!20}{ \ce{VO4^{3-} ->[\num{+2,19}] HV2O5- ->[\num{+0,542}] V2O3 ->[\num{-0,486}] VO ->[\num{-0,820}] V} }
+
+\ce{Nb2O5 ->[\num{-0,1}] Nb^{3+} ->[\num{-1,1}] Nb}
+
+\ce{Ta2O5 ->[\num{-0,81}] Ta}
+
+\ce{TaF7^{2-} ->[\num{-0,45}] Ta}
+
+\section*{Group 6}
+\label{sec:group6}
+\addcontentsline{toc}{section}{\nameref{sec:group6}}
+
+\ce{Cr2O7^{2-} ->[\num{+0,55}] Cr(V) ->[\num{+1,34}] Cr(IV) ->[\num{+2,10}] Cr^{3+} ->[\num{-0,424}] Cr^{2+} ->[\num{-0,90}] Cr}
+
+\hfill\colorbox{gray!20}{ \ce{CrO4^{2-} ->[\num{-0,11}] Cr(OH)3 ->[\num{-1,10}]  Cr(OH)2 ->[\num{-1,40}] Cr} }
+
+\ce{MoO3 ->[\num{+0,49}] Mo2O4^{2+} ->[\num{+0,17}] [Mo3O4(OH2)9]^{4+} ->[\num{0}] [Mo2(\mu-OH)2(OH2)8]^{4+} ->[(\num{+0,005})] Mo}
+
+\ce{MoO3 ->[\num{+0,646}] MoO2 ->[\num{-0,1}] Mo^{3+} ->[\num{-0,20}] Mo}
+\hfill \colorbox{gray!20}{ \ce{MoO4^{2-} ->[\num{-0,780}] MoO2 ->[\num{-0,980}] Mo} }
+
+\ce{[MoCl5O]^{2-} ->[\num{-0,38}] [MoCl5(OH2)]^{2-}}
+
+\ce{WO3 ->[\num{-0,029}] W2O5 ->[\num{-0,031}] WO2 ->[\num{-0,119}] W}
+\hfill \colorbox{gray!20}{ \ce{WO4^{2-} ->[\num{-1,259}] WO2 ->[\num{-0,982}] W} }
+
+\ce{[CoW12O40]^{6-} ->[\num{-0,046}] [H2CoW12O40]^{6-}}
+
+\ce{[PW12O40]^{3-} ->[\num{+0,22}] [PW12O40]^{4-}}
+
+\hfill \colorbox{gray!20}{ \ce{[W(CN)4(OH)4]^{2-} ->[\num{-0,702}] [W(CN)4(OH4)]^{4-}} }
+
+\section*{Group 7}
+\label{sec:group7}
+\addcontentsline{toc}{section}{\nameref{sec:group7}}
+
+\ce{MnO4- ->[\num{+0,90}] HMnO4- ->[\num{+1,28}] (H3MnO4) ->[\num{+2,9}] MnO2 ->[\num{+0,95}] Mn^{3+} ->[\num{+1,51}] Mn^{2+} ->[\num{-1,18}] Mn}
+
+\colorbox{gray!20}{
+\ce{MnO4- ->[\num{+0,56}] MnO4^{2-} ->[\num{+0,27}] MnO4^{3-} ->[\num{+0,93}] MnO2 ->[\num{+0,15}] Mn2O3 ->[\num{-0,25}] Mn(OH)2 ->[\num{-1,56}] Mn}
+}
+
+\ce{TcO4- ->[(\num{+0,74})] TcO2 ->[(\num{+0,28})] Tc}
+
+\ce{(ReO4^-) ->[\num{+0,72}] ReO3 ->[\num{+0,40}] ReO2 ->[\num{+0,276}] Re}
+\hfill \colorbox{gray!20}{ \ce{ReO2 ->[\num{-1,25}] Re2O3 ->[\num{-0,33}] Re} }
+
+\ce{(ReO4^-) ->[\num{+0,12}] [ReCl6]^{2-} ->[\num{+0,51}] Re}
+
+\section*{Group 8}
+\label{sec:group8}
+\addcontentsline{toc}{section}{\nameref{sec:group8}}
+
+\newcommand\ncoord[2][0,0]{%
+	\tikz[remember picture,overlay]{\path (#1) coordinate (#2);}%
+}
+\newcommand\ccoord[1]{\ncoord[0.5em,1em]{#1}}
+\tikzset{
+	latimer/.style={thick,black!80!black},
+}
+\begin{minipage}{0.5\textwidth}
+\[
+\ce{\ccoord{a} FeO4^{2-} ->[(\num{+2,7})] FeO^{2+} ->[(\num{+1,2})] \ccoord{b} Fe^{3+} ->[\num{+0,77}] Fe^{2+} ->[\num{-0,44}] Fe}
+\]
+\end{minipage}
+\begin{tikzpicture}[overlay,remember picture]
+	\draw[latimer,->] (a) -- ++(0,0.9em) -| (b)
+		node[above, near start] {\footnotesize\num{+2,20}};
+\end{tikzpicture}
+
+\hfill \colorbox{gray!20}{ \ce{FeO4^{2-} ->[\num{+0,72}] Fe(OH)3 ->[\num{-0,56}] Fe(OH)2 ->[\num{-0,887}] Fe} }
+
+\ce{[Fe(CN)6]^{3-} ->[\num{+0,36}] [Fe(CN)6]^{4-} ->[\num{-1,16}] Fe}
+
+\ce{RuO4 ->[\num{+0,99}] RuO4- ->[\num{+1,6}] RuO2+ ->[\num{+1,5}] (Ru(OH)2^{2+}) ->[\num{+0,86}] Ru^{3+} ->[\num{+0,25}] Ru^{2+} ->[\num{+0,8}] Ru}
+
+\ce{[Ru(NH3)6]^{3+} ->[\num{+0,10}] [Ru(NH3)6]^{2+}}
+
+\ce{[Ru(CN)6]^{3-} ->[\num{+0,85}] [Ru(CN)6]^{4-}}
+
+\ce{[Ru(bpy)3]^{3+} ->[\num{+1,53}] [Ru(bpy)3]^{2+}}
+
+\ce{OsO4(aq) ->[\num{+1,02}] OsO2 ->[\num{+0,65}] Os}
+
+\ce{[OsCl6]^{2-} ->[\num{+0,85}] [OsCl6]^{3-}}
+
+\ce{[OsBr6]^{2-} ->[\num{+0,45}] [OsBr6]^{3-}}
+
+\ce{[Os(CN)6]^{3-} ->[\num{+0,634}] [Os(CN)6]^{4-}}
+
+\ce{[Os(bpy)3]^{3+} ->[\num{+0,885}] [Os(bpy)3]^{2+}}
+
+\section*{Group 9}
+\label{sec:group9}
+\addcontentsline{toc}{section}{\nameref{sec:group9}}
+
+\ce{CoO2 ->[\num{+1,416}] Co^{3+} ->[\num{+1,92}] Co^{2+} ->[\num{-0,282}] Co}
+$\quad$ \colorbox{gray!20}{ \ce{CoO2 ->[\num{+0,7}] Co(OH)3 ->[\num{+0,17}] Co(OH)2 ->[\num{-0,73}] Co} }
+
+\ce{Rh^{3+} ->[\num{+0,76}] Rh}
+
+\ce{IrO2 ->[\num{+0,23}] (Ir^{3+}) ->[\num{+1,16}] Ir}
+
+\ce{[IrCl6]^{2-} ->[\num{+0,867}] [IrCl6]^{3-} ->[\num{+0,86}] Ir}
+
+\ce{[IrBr6]^{2-} ->[\num{+0,805}] [IrBr6]^{3-}}
+
+\ce{[IrI6]^{2-} ->[\num{+0,49}] [IrI6]^{3-}}
+
+\section*{Group 10}
+\label{sec:group10}
+\addcontentsline{toc}{section}{\nameref{sec:group10}}
+
+\ce{NiO4^{2-} ->[(\num{+1,8})] NiO2 ->[\num{+1,59}] Ni^{2+} ->[\num{-0,257}] Ni}
+\hfill \colorbox{gray!20}{ \ce{NiO4^{2-} ->[(\num{+0,4})] NiO2 ->[\num{-0,490}] Ni(OH)2 ->[\num{-0,72}] Ni} }
+
+\ce{PdO2 ->[\num{+1,194}] Pd^{2+} ->[\num{+0,951}] Pd}
+\hfill \colorbox{gray!20}{ \ce{PdO2 ->[\num{+1,47}] PdO ->[\num{+0,897}] Pd} }
+
+\ce{[PdCl6]^{2-} ->[\num{+1,47}] [PdCl4]^{2-} ->[\num{+0,60}] Pd}
+
+\ce{[PdBr4]^{2-} ->[\num{+0,49}] Pd}
+
+
+\ce{PtO2 ->[\num{+1,01}] PtO ->[\num{+0,98}] Pt}
+
+\ce{[PtCl6]^{2-} ->[\num{+0,726}] [PtCl4]^{2-} ->[\num{+0,758}] Pt}
+
+\ce{[PtBr6]^{2-} ->[\num{+0,613}] [PtBr4]^{2-} ->[\num{+0,698}] Pt}
+
+\ce{[PtI6]^{2-} ->[\num{+0,329}] [PtI4]^{2-} ->[\num{+0,40}] Pt}
+
+\section*{Group 11}
+\label{sec:group11}
+\addcontentsline{toc}{section}{\nameref{sec:group11}}
+
+\ce{CuO^{2+} ->[\num{+1,6}] Cu2O3 ->[\num{+2,0}] Cu^{2+} ->[\num{+0,159}] Cu+ ->[\num{+0,521}] Cu}
+\hfill \colorbox{gray!20}{ \ce{Cu(OH)2 ->[\num{-0,080}] Cu2O ->[\num{-0,360}] Cu} }
+
+\ce{[Cu(NH3)4]^{2+} ->[\num{+0,10}] [Cu(NH3)2]+ ->[\num{-0,10}] Cu}
+
+\ce{Cu^{2+} ->[\num{+1,12}] [Cu(CN)2]+ ->[\num{-0,44}] Cu}
+
+
+\ce{Ag2O3 ->[\num{+1,57}] AgO ->[\num{+1,77}] Ag+ ->[\num{+0,80}] Ag}
+\hfill \colorbox{gray!20}{ \ce{Ag2O3 ->[\num{+0,739}] AgO ->[\num{+0,602}] Ag2O ->[\num{+0,343}] Ag} }
+
+\hfill \colorbox{gray!20}{ \ce{[Ag(NH3)2]+ ->[\num{+0,373}] Ag} }
+
+\hfill \colorbox{gray!20}{ \ce{[Ag(CN)2]- ->[\num{-0,31}] Ag} }
+
+\ce{Au^{3+} ->[\num{+1,36}] Au+ ->[\num{+1,83}] Au}
+
+\ce{[AuCl4]- ->[\num{+0,926}] [AuCl2]- ->[\num{+1,154}] Au}
+
+\ce{[AuBr4]- ->[\num{+0,802}] [AuBr2]- ->[\num{+0,960}] Au}
+
+\ce{[AuI4]- ->[\num{+0,55}] [AuI2]- ->[\num{+0,578}] Au}
+
+\ce{[Au(SCN)4]- ->[\num{+0,623}] [Au(SCN)2]- ->[\num{+0,662}] Au}
+
+\ce{[Au(SCN)2]- ->[\num{-0,595}] Au}
+
+\section*{Group 12}
+\label{sec:group12}
+\addcontentsline{toc}{section}{\nameref{sec:group12}}
+
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\ce{Zn^{2+} ->[\num{-0,762}] Zn}
+	\\
+
+	\ce{Cd^{2+} ->[\num{-0,402}] Cd}
+
+	\ce{Hg^{2+} ->[\num{+0,911}] Hg2^{2+} ->[\num{+0,796}] Hg}
+
+	\ce{Hg2Cl2 ->[\num{+0,268}] Hg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\colorbox{gray!20}{ \ce{[Zn(OH)4]^{2-} ->[\num{-1,285}] Zn} }
+
+	\colorbox{gray!20}{ \ce{Zn(OH)2 ->[\num{-1,246}] Zn} }
+
+	\colorbox{gray!20}{ \ce{Cd(OH)2 ->[\num{-0,824}] Cd} }
+
+	\colorbox{gray!20}{ \ce{HgO ->[\num{+0,0977}] Hg} }
+	\\
+
+\end{minipage}
+
+\section*{Group 13}
+\label{sec:group13}
+\addcontentsline{toc}{section}{\nameref{sec:group13}}
+
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\ce{B(OH)3 ->[\num{-0,890}] B}
+	\\
+
+	\ce{Al^{3+} ->[\num{-1,676}] Al}
+
+	\ce{Ga^{3+} ->[\num{-0,65}] Ga^{2+} ->[\num{-0,45}] Ga}
+
+	\ce{In^{3+} ->[\num{-0,49}] In^{2+} ->[\num{-0,40}] In+ ->[\num{-0,126}] In}
+
+	\ce{Tl^{3+} ->[\num{+0,30}] Tl^{2+} ->[\num{+2,22}] Tl+ ->[\num{-0,34}] Tl}
+\end{minipage}
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\colorbox{gray!20}{ \ce{[B(OH)4]- ->[\num{-1,81}] B} }
+
+	\colorbox{gray!20}{ \ce{[B(OH)4]- ->[\num{-1,24}] [BH4]-} }
+
+	\colorbox{gray!20}{ \ce{[Al(OH)4]- ->[\num{-2,31}] Al} }
+
+	\colorbox{gray!20}{ \ce{[GaO(OH)2]- ->[\num{-1,22}] Ga} }
+
+	\colorbox{gray!20}{ \ce{In(OH)3 ->[\num{+1,0}] In} }
+
+	\colorbox{gray!20}{ \ce{Tl(OH)3 ->[\num{-0,05}] Tl(OH) ->[\num{-0,34}] Tl} }
+\end{minipage}
+
+\section*{Group 14}
+\label{sec:group14}
+\addcontentsline{toc}{section}{\nameref{sec:group14}}
+
+\ce{CO2 ->[\num{-0,199}] HCOOH ->[\num{-0,034}] HCHO ->[\num{+0,237}] CH3OH ->[\num{+0,588}] CH4}
+
+\hfill \colorbox{gray!20}{ \ce{CO3^{2-} ->[\num{-0,930}] HCO2- ->[\num{-1,160}] HCHO ->[\num{-0,591}] CH3OH ->[\num{-0,245}] CH4} }
+
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\ce{CO2 ->[\num{-0,104}] CO ->[\num{+0,517}] C ->[\num{+0,132}] CH4}
+	\\
+
+	\ce{SiO2 ->[\num{-0,909}] Si ->[\num{-0,143}] SiH4}
+
+	\ce{GeO2 ->[\num{-0,118}] GeO ->[\num{+0,225}] Ge ->[\num{-0,42}] GeH4}
+
+	\ce{SnO2 ->[\num{-0,088}] SnO ->[\num{-0,104}] Sn}
+
+	\ce{Sn^{4+} ->[\num{+0,15}] Sn^{2+} ->[\num{-0,137}] Sn}
+
+	\ce{PbO2 ->[\num{+1,46}] Pb^{2+} ->[\num{-0,125}] Pb}
+
+	\ce{PbO2 ->[\num{+1,70}] PbSO4 ->[\num{-0,356}] Pb}
+\end{minipage}
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\colorbox{gray!20}{ \ce{C ->[\num{-1,148}] CH3OH} }
+
+	\colorbox{gray!20}{ \ce{CO3^{2-} ->[\num{-0,930}] HCO2- ->[\num{-0,52}] C ->[\num{-0,70}] CH4} }
+
+	\colorbox{gray!20}{\ce{SiO3^{2-} ->[\num{-1,69}] Si ->[\num{-0,93}] SiH4}}
+
+	\colorbox{gray!20}{ \ce{[GeO2(OH)]- ->[\num{-0,89}] Ge ->[\num{-1,1}] GeH4} }
+
+	\colorbox{gray!20}{ \ce{[Sn(OH)6]^{2-} ->[(\num{-0,93})] SnOOH- ->[(\num{-0,91})] Sn} }
+	\\
+
+	\colorbox{gray!20}{ \ce{PbO2 ->[\num{+0,254}] PbO ->[\num{-0,578}] Pb} }
+	\\
+
+\end{minipage}
+
+\section*{Group 15}
+\label{sec:group15}
+\addcontentsline{toc}{section}{\nameref{sec:group15}}
+
+\ce{NO3- ->[\num{+0,803}] N2O4 ->[\num{+1,07}] HNO2 ->[\num{+0,996}] NO ->[\num{+1,59}] N2O ->[\num{+1,77}] N2 ->[\num{-1,87}] NH3OH+ ->[\num{+1,41}] N2H5+ ->[\num{+1,275}] NH4+}
+
+\colorbox{gray!20}{ \ce{NO3- ->[\num{-0,86}] N2O4 ->[\num{+0,867}] NO2- ->[\num{-0,46}] NO ->[\num{+0,79}] N2O ->[\num{+0,94}] N2 ->[\num{-3,04}] NH2OH ->[\num{+0,73}] N2H4 ->[\num{+0,1}] NH3} }
+
+\ce{H3PO4 ->[\num{-0,933}] H4P2O6 ->[\num{+0,380}] H3PO3 ->[\num{-0,499}] H3PO2 ->[\num{-0,508}] P ->[\num{-0,100}] P2H4 ->[\num{-0,006}] PH3}
+
+\colorbox{gray!20}{\ce{PO4^{3-} ->[\num{-1,12}] HPO3^{2-} ->[\num{-1,57}] H2PO2^- ->[\num{-2,05}] P ->[\num{-0,89}] PH3}}
+
+\ce{H3AsO4 ->[\num{+0,560}] HAsO2 ->[\num{+0,240}] As ->[\num{-0,225}] AsH3}
+\hfill\colorbox{gray!20}{ \ce{AsO4^{3-} ->[\num{-0,67}] AsO2^- ->[\num{-0,68}] As ->[\num{-1,37}] AsH3} }
+
+\ce{Sb2O5 ->[\num{+0,671}] Sb2O3 ->[\num{0,152}]  Sb ->[\num{-0,510}] SbH3}
+
+\ce{Sb2O5 ->[\num{+0,581}] SbO+ ->[\num{0,212}]  Sb ->[\num{-0,510}] SbH3}
+\hfill
+\colorbox{gray!20}{ \ce{[Sb(OH)6]- ->[\num{-0,465}] [Sb(OH)4]- ->[\num{-0,639}] Sb ->[\num{-1,338}] SbH3} }
+
+\ce{Bi2O5 ->[\num{+1,60}] BiO+ ->[\num{+0,317}] Bi ->[\num{-0,97}] BiH3}
+\hfill
+\colorbox{gray!20}{ \ce{Bi2O5 ->[\num{+0,78}] Bi2O4 ->[\num{+0,56}] Bi2O3 ->[\num{-0,46}] Bi ->[(\num{-1,6})] BiH3} }
+
+\section*{Group 16}
+\label{sec:group16}
+\addcontentsline{toc}{section}{\nameref{sec:group16}}
+
+\ce{O3 ->[\num{+2,076}] O2 ->[\num{-0,05}] HO2 ->[\num{+1,44}] H2O2 ->[\num{+1,763}] H2O}
+\hfill
+\colorbox{gray!20}{ \ce{O3 ->[\num{+1,24}] O2 ->[\num{-0,18}] O2^- ->[\num{+0,021}] HO2^- ->[\num{+0,867}] OH-} }
+
+\ce{S2O8^{2-} ->[\num{+2,123}] HSO4^{-} ->[\num{-0,253}] S2O6^{2-} ->[\num{+0,569}] H2SO3 ->[\num{+0,400}] S2O3^{2-} ->[\num{+0,600}] S ->[\num{+0,144}] H2S}
+
+\hfill\colorbox{gray!20}{ \ce{SO4^{2-} ->[\num{-0,936}] SO3^{2-} ->[\num{-0,576}] S2O3^{2-} ->[\num{-0,742}] S ->[\num{-0,476}] S^{2-}} }
+
+\ce{SeO4^{2-} ->[\num{+1,15}] H2SeO3 ->[\num{+0,74}] Se ->[\num{-0,11}] H2Se}
+\hfill
+\colorbox{gray!20}{ \ce{SeO4^{2-} ->[\num{+0,03}] SeO3^{2-} ->[\num{-0,36}] Se ->[\num{-0,67}] Se^{2-}} }
+
+\ce{H2TeO4 ->[\num{+0,93}] (Te^{4+}) ->[\num{+0,57}] Te ->[\num{-0,793}] H2Te}
+\hfill
+\colorbox{gray!20}{ \ce{TeO4^{2-} ->[\num{+0,07}] TeO3^{2-} ->[\num{-0,42}] Te ->[\num{-1,143}] Te^{2-}} }
+
+\ce{H2TeO4 ->[\num{+1,00}] TeO2 ->[\num{+0,53}] Te ->[\num{-0,793}] H2Te}
+
+\section*{Group 17}
+\label{sec:group17}
+\addcontentsline{toc}{section}{\nameref{sec:group17}}
+
+\ce{F2 ->[\num{+3,053}] HF} \hfil \colorbox{gray!20}{ \ce{F2 ->[+2,866] F-} }
+
+\ce{F2 ->[\num{+2,979}] HF2-}
+
+\ce{ClO4- ->[\num{+1,201}] ClO3- ->[\num{+1,175}] ClO2 ->[\num{+1,188}] HClO2 ->[\num{+1,674}] HClO ->[\num{+1,630}] Cl2 ->[\num{+1,358}] Cl-}
+
+\hfill\colorbox{gray!20}{ \ce{ClO4- ->[\num{+0,374}] ClO3- ->[\num{-0,481}] ClO2 ->[\num{+1,071}] ClO2- ->[\num{+0,681}] ClO- ->[\num{+0,421}] Cl2 ->[\num{+1,358}] Cl-} }
+
+\ce{BrO4- ->[\num{+1,853}] BrO3- ->[\num{+1,447}] HBrO ->[\num{+1,604}] Br2 ->[\num{+1,065}] Br-}
+
+\hfill\colorbox{gray!20}{ \ce{BrO4- ->[\num{+1,025}] BrO3- ->[\num{+0,492}] BrO- ->[\num{+0,455}] Br2 ->[\num{+1,065}] Br-} }
+
+\ce{H5IO6 ->[\num{+1,60}] IO3- ->[\num{+1,13}] HIO ->[\num{+1,44}] I2 ->[\num{+0,535}] I-}
+
+\hfill\colorbox{gray!20}{ \ce{H3IO6^{2-} ->[\num{+0,65}] IO3- ->[\num{+0,15}] IO- ->[\num{+0,42}] I2 ->[\num{+0,535}] I-} }
+
+\ce{I3- ->[\num{+0,536}] I-}
+
+\section*{Group 18}
+\label{sec:group18}
+\addcontentsline{toc}{section}{\nameref{sec:group18}}
+
+\ce{H4XeO6 ->[\num{+2,4}] XeO3 ->[\num{+2,12}] Xe}
+\hfill
+\colorbox{gray!20}{ \ce{HXeO6^{3-} ->[\num{+0,99}] HXeO4- ->[\num{+1,24}] Xe} }
+
+\section*{Lanthanide series}
+\label{sec:lanthanides}
+\addcontentsline{toc}{section}{\nameref{sec:lanthanides}}
+
+\ce{La^{3+} ->[\num{-2,38}] La}
+\hfil
+\colorbox{gray!20}{ \ce{La(OH)3 ->[\num{-2,80}] La} }
+
+\begin{minipage}{0.33\textwidth} \setstretch{1.5}
+	\ce{Ce^{4+} ->[\num{+1,76}] Ce^{3+} ->[\num{-2,34}] Ce}
+
+	\ce{Pr^{4+} ->[\num{+3,2}] Pr^{3+} ->[\num{-2,34}] Pr}
+
+	\ce{Nd^{3+} ->[\num{-2,6}] Nd^{2+} ->[\num{-2,2}] Nd}
+
+	\ce{Pm^{3+} ->[\num{-2,29}] Pm}
+
+	\ce{Sm^{3+} ->[\num{-1,55}] Sm^{2+} ->[\num{-2,67}] Sm}
+\end{minipage}
+\begin{minipage}{0.33\textwidth} \setstretch{1.5}
+	\ce{Eu^{3+} ->[\num{-0,35}] Eu^{2+} ->[\num{-2,80}] Eu}
+
+	\ce{Gd^{3+} ->[\num{-2,28}] Gd}
+
+	\ce{Tb^{4+} ->[\num{+3,1}] Tb^{3+} ->[\num{-2,31}] Tb}
+
+	\ce{Dy^{3+} ->[\num{-2,5}] Dy^{2+} ->[\num{-2,2}] Dy}
+
+	\ce{Ho^{3+} ->[\num{-2,33}] Ho}
+\end{minipage}
+\begin{minipage}{0.33\textwidth} \setstretch{1.5}
+	\ce{Er^{3+} ->[\num{-2,32}] Er}
+
+	\ce{Tm^{3+} ->[\num{-2,3}] Tm^{2+} ->[\num{-2,3}] Tm}
+
+	\ce{Yb^{3+} ->[\num{-1,05}] Yb^{2+} ->[\num{-2,8}] Yb}
+
+	\ce{Lu^{3+} ->[\num{-2,30}] Lu}
+\end{minipage}
+
+
+\section*{Actinide series}
+\label{sec:actinides}
+\addcontentsline{toc}{section}{\nameref{sec:actinides}}
+
+\ce{Ac^{3+} ->[\num{-4,9}] (Ac^{2+}) ->[\num{-0,7}] Ac}
+
+\ce{Th^{4+} ->[\num{-3,8}] (Th^{3+}) ->[\num{-4,9}] (Th^{2+}) ->[\num{+0,7}] Th}
+
+\ce{PaOOH^{2+} ->[\num{-0,05}] Pa^{4+} ->[\num{-1,4}] Pa^{3+} ->[\num{-5,0}] Pa^{2+} ->[\num{+0,3}] Pa}
+
+\ce{UO2^{2+} ->[\num{+0,17}] UO2+ ->[\num{+0,38}] U^{4+} ->[\num{-0,52}] U^{3+} ->[\num{-4,7}] U^{2+} ->[\num{-0,1}] U}
+
+\ce{NpO2^{2+} ->[\num{+1,24}] NpO2+ ->[\num{+0,64}] Np^{4+} ->[\num{+0,15}] Np^{3+} ->[\num{-4,7}] (Np^{2+}) ->[\num{-0,3}] Np}
+
+\ce{PuO2^{2+} ->[\num{+1,02}] PuO2+ ->[\num{+1,04}] Pu^{4+} ->[\num{+1,01}] Pu^{3+} ->[\num{-3,5}] (Pu^{2+}) ->[\num{-1,2}] Pu}
+
+\ce{AmO2^{2+} ->[\num{+1,60}] AmO2+ ->[\num{+0,82}] Am^{4+} ->[\num{+2,62}] Am^{3+} ->[\num{-2,3}] (Am^{2+}) ->[\num{-1,95}] Am}
+
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\ce{Cm^{4+} ->[\num{+3,1}] Cm^{3+} ->[\num{-3,7}] (Cm^{2+}) ->[\num{-1,2}] Cm}
+
+	\ce{Bk^{4+} ->[\num{+1,67}] Bk^{3+} ->[\num{-2,80}] (Bk^{2+}) ->[\num{-1,6}] Bk}
+
+	\ce{(Cf^{4+}) ->[\num{+3,2}] Cf^{3+} ->[\num{-1,60}] (Cf^{2+}) ->[\num{-2,06}] Cf}
+
+	\ce{(Es^{4+}) ->[\num{+4,5}] Es^{3+} ->[\num{-1,55}] (Es^{2+}) ->[\num{-2,2}] Es}
+\end{minipage}
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\ce{Fm^{3+} ->[\num{-1,15}] Fm^{2+} ->[\num{-2,37}] Fm}
+
+	\ce{Md^{3+} ->[\num{-0,15}] Md^{2+} ->[\num{-2,4}] Md}
+
+	\ce{No^{3+} ->[\num{+1,4}] No^{2+} ->[\num{-2,5}] No}
+
+\end{minipage}
+
+\section*{Neutral solution potentials for some complexes}
+\label{sec:complexes}
+\addcontentsline{toc}{section}{\nameref{sec:complexes}}
+
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\subsection*{Group 6}
+	\label{ssec:group6}
+	\addcontentsline{toc}{section}{\nameref{ssec:group6}}
+
+	\ce{[Cr(CN)6]^{3-} ->[\num{-1,143}] [Cr(CN)6]^{4-}}
+
+	\ce{[Cr(edta)(OH2)]- ->[\num{-0,99}] [Cr(edta)(OH2)]^{2-}}
+
+	\ce{[Mo(CN)6]^{3-} ->[\num{+0,725}] [Mo(CN)6]^{4-}}
+
+	\ce{[W(CN)8]^{3-} ->[\num{+0,457}] [W(CN)8]^{4-}}
+\end{minipage}
+\begin{minipage}{0.5\textwidth} \setstretch{1.5}
+	\subsection*{Group 9}
+	\label{ssec:group9}
+	\addcontentsline{toc}{section}{\nameref{ssec:group9}}
+
+	\ce{[Co(NH3)6]^{3+} ->[\num{+0,058}] [Co(NH3)6]^{2+}}
+
+	\ce{[Co(phen)3]^{3+} ->[\num{+0,33}] [Co(phen)3]^{2+}}
+
+	\ce{[Co(ox)3]^{3-} ->[\num{+0,57}] [Co(ox)3]^{4-}}
+
+	\ce{[Rh(CN)6]^{3-} ->[\num{+0,9}] [Rh(CN)6]^{4-}}
+
+\end{minipage}
+
+\subsection*{Group 10}
+\label{ssec:group10}
+\addcontentsline{toc}{section}{\nameref{ssec:group10}}
+
+\ce{[Ni(NH3)6]^{2+} ->[\num{-0,49}] Ni}
+
+\end{document}
