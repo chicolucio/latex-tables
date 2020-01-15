@@ -1,57 +1,20 @@
 \documentclass[a4paper, 10pt]{article}
 
-%margens
 \usepackage[top=1cm, bottom=2.0cm, left=1cm, right=1cm, includefoot]{geometry}
-
-\label{conf_geral}
-\usepackage[utf8x]{inputenc} %caracteres acentuados
-\usepackage{color}
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\usepackage[brazil]{babel}
-\usepackage{amsfonts, amssymb, amsmath, amsthm, commath, physics} % ver explicação em https://tex,stackexchange,com/questions/32100/what-does-each-ams-package-do
-\usepackage{mathtools}
-\usepackage{proof} %?
-%\usepackage{eulervm, bookman}
-\usepackage{marginnote} % nota de margem
-\usepackage{comment} % comentários longos no código
-\usepackage[font=small,labelfont=bf]{caption} %fonte das legendas
-\usepackage{lipsum} %gerador de lorota em Latim
-\usepackage{lscape}
-\usepackage{pdflscape}
-
-\label{conf_fonts}
-\usepackage[fontsize=10pt]{scrextend}
-%\usepackage{moresize}
-\usepackage[normalem]{ulem}
-
-\label{conf_graph}
-\usepackage{graphicx} %inserir figuras
-\usepackage{float}
-\usepackage{tikz}
-\usepackage{wrapfig} %figuras rodeadas por texto
 
 \label{conf_SI}
 \usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
 \DeclareSIUnit{\atmosphere}{atm}
-\DeclareSIUnit{\calorie}{cal}
-\sisetup{output-decimal-marker = {.}, round-mode=off, add-decimal-zero=false, retain-explicit-plus} %números na forma 1,0 ao invés de 1,0
+\sisetup{output-decimal-marker = {.}, round-mode=off, add-decimal-zero=false, retain-explicit-plus}
 
 \label{conf_spacing_par}
-\usepackage{xspace} %para correção de espaços
-\usepackage{setspace} %espaçamento entre linhas e opções mais comuns
+\usepackage{xspace}
+\usepackage{setspace}
 \singlespacing
-%\onehalfspacing
-%\doublespacing
-%\setstretch{1,1}
-\parindent 0ex %retirada de indentação de todos os parágrafos
-%\setlength\parskip{\baselineskip}
-\usepackage{parskip} %espaçamento entre parágrafos
+\parindent 0ex
 
 \label{conf_chemistry_packages}
 \usepackage[version=4]{mhchem} %pacote química
-\usepackage{chemfig}
-\renewcommand*\printatom[1]{\ensuremath{\mathsf{#1}}}
-\usepackage{elements}
 \usepackage{chemmacros}
 \chemsetup[acid-base]{p-style=slanted}
 \NewChemEqConstant{\Kc}{K-conc}{\mathrm{c}}
@@ -60,17 +23,7 @@
 \NewChemState\ElPot{ symbol=E , subscript-pos=right , superscript=\standardstate , pre= , unit=\volt }
 
 \label{conf_table}
-\usepackage{array} %tabelas
 \usepackage{booktabs}
-\usepackage{makecell} %editar células em tabelas
-\renewcommand\theadalign{cb}
-\renewcommand\theadfont{\bfseries}
-\renewcommand\theadgape{\Gape[4pt]}
-\renewcommand\cellgape{\Gape[1pt]}
-\usepackage{multirow}
-\usepackage{colortbl}
-\usepackage{longtable}
-\usepackage{multicol}
 \usepackage{supertabular}
 
 \label{conf_head_footnote}
@@ -87,20 +40,12 @@
 \fancyfoot[R]{\footnotesize Page \thepage \,of \pageref*{LastPage}}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
-\label{conf_xlop}
-\usepackage{xlop}
-\opset{decimalsepsymbol={,}}
-
 \label{conf_refs}
-\usepackage[super,sort&compress]{natbib} %numeração refs sobrescrito
-\usepackage{notoccite}
-\usepackage{lastpage} %possibilita se referir à última página
-\setcounter{secnumdepth}{3}
-\usepackage{hyperref} % referências cruzadas
+\usepackage{lastpage}
+\usepackage{hyperref}
 
 \label{conf_id_doc}
-%identificação do documento
-\author{Prof. Francisco Bustamante}
+\author{Francisco Bustamante}
 \title{\textit{Solubility product constants}}
 \date{2019}
 
@@ -110,147 +55,158 @@
 
 \twocolumn
 
-The table lists standard reduction potentials, \ElPot*{} values, at \SI{298.15}{\kelvin} (\SI{25}{\celsius}), and at a pressure of \SI{101.325}{\kilo\pascal} (\SI{1}{\atmosphere}) (not the standard pressure of \SI{1}{\bar}). The activity of all soluble species is assumed to be \SI{1.000}{\mole\per\liter}. This is in particular important when \pH \, (\ce{H+} or \ce{OH-}) take part in the equilibrium. The reliability of the potentials is not the same for all the data. Typically, the values with fewer significant figures have lower reliability. The values of reduction potentials, in particular those of less common reactions, are not definite; they are subject to occasional revisions.
+The table lists standard reduction potentials, \ElPot*{} values, at
+\SI{298.15}{\kelvin} (\SI{25}{\celsius}), and at a pressure of
+\SI{101.325}{\kilo\pascal} (\SI{1}{\atmosphere}) (not the standard pressure of
+\SI{1}{\bar}). The activity of all soluble species is assumed to be
+\SI{1.000}{\mole\per\liter}. This is in particular important when \pH \,
+(\ce{H+} or \ce{OH-}) take part in the equilibrium. The reliability of the
+potentials is not the same for all the data. Typically, the values with fewer
+significant figures have lower reliability. The values of reduction potentials,
+in particular those of less common reactions, are not definite; they are subject
+to occasional revisions.
 
-Abbreviations: ac = acetate; bipy = 2,2'-dipyridine, or bipyridine; en = ethylenediamine; phen = 1,10-phenanthroline.
+Abbreviations: ac = acetate; bipy = 2,2'-dipyridine, or bipyridine;
+en = ethylenediamine; phen = 1,10-phenanthroline.
 
-Reference: Rumble, J. \textit{CRC Handbook of Chemistry and Physics}, 98th Edition, CRC Press LLC, 2017.
+Reference: Rumble, J. \textit{CRC Handbook of Chemistry and Physics}, 98th
+Edition, CRC Press LLC, 2017.
 
 \tablehead{%
     \toprule
-    Reduction half-reaction &     \ElPot*{} / \si{\volt} \\
+    Reduction half-reaction                              & \ElPot*{} / \si{\volt} \\
     \midrule
 }
 
 \begin{footnotesize}
     \begin{supertabular}{ll}
-    \ce{Ag+ + e- <=> Ag} &              \num{+0.7996} \\
-    \ce{Ag^{2+} + e- <=> Ag+} &              \num{+1.980} \\
-    \ce{AgBr + e- <=> Ag + Br-} &              \num{+0.07133} \\
-    \ce{AgCl + e- <=> Ag + Cl-} &              \num{+0.22233} \\
-    % \ce{[Ag(CN)2]- + e- <=> Ag(s) + 2 CN-} & \num{-0.31} \\ % Brown
-    \ce{Ag2CrO4 + 2 e- <=> 2 Ag + CrO4^{2-}} & \num{+0.4470} \\
-    \ce{AgF + e- <=> Ag + F-} &              \num{+0.779} \\
-    \ce{AgI + e- <=> Ag + I-} &              \num{-0.15224} \\
-    \ce{Al^{3+} + 3 e- <=> Al} &              \num{-1.676} \\
-    \ce{H3AsO4 + 2 H+ + 2 e- <=> HAsO2 + 2 H2O} & \num{+0.560} \\
-    \ce{Au+ + e- <=> Au} &              \num{+1.692} \\
-    \ce{Au^{3+} + 2 e- <=> Au+} &              \num{+1.401} \\
-    \ce{Au^{3+} + 3 e- <=> Au} &              \num{+1.498} \\
-    \ce{Ba^{2+} + 2 e- <=> Ba} &              \num{-2.912} \\
-    \ce{Be^{2+} + 2 e- <=> Be} &              \num{-1.847} \\
-    \ce{Bi^{3+} + 3 e- <=> Bi} &              \num{+0.308} \\
-    \ce{Bi2O3 + 3 H2O + 6 e- <=> 2 Bi + 6 OH-} & \num{-0.46} \\
-    \ce{BiO+ + 2 H+ + 3 e- <=> Bi + H2O} & \num{+0.320} \\
-    \ce{Br2 + 2 e- <=> 2 Br-} &              \num{+1.0873} \\
-    \ce{BrO- + H2O + 2 e- <=> Br- + 2 OH-} &              \num{+0.761} \\
-    \ce{2 HBrO + 2 H+ + 2 e- <=> Br2 + 2 H2O} &              \num{+1.574} \\
-    \ce{2 BrO3- + 12 H+ + 10 e- <=> Br2 + 6 H2O} & \num{+1.482} \\
-    \ce{CO2 + 2 H+ + 2 e- <=> HCOOH} & \num{-0.199} \\
-    \ce{Ca^{2+} + 2 e- <=> Ca} &              \num{-2.868} \\
-    \ce{Cd^{2+} + 2 e- <=> Cd} &              \num{-0.4030} \\
-    \ce{Cd(OH)2 + 2 e- <=> Cd + 2 OH-} &              \num{-0.809} \\
-    \ce{Ce^{3+} + 3 e- <=> Ce} &              \num{-2.336} \\
-    \ce{Ce^{4+} + e- <=> Ce^{3+}} &              \num{+1.72} \\
-    \ce{Cl2 + 2 e- <=> 2 Cl-} &              \num{+1.35827} \\
-    \ce{ClO- + H2O + 2 e- <=> Cl- + 2 OH-} &              \num{+0.81} \\
-    \ce{ClO4- + 2 H+ + 2 e- <=> ClO3- + H2O} &              \num{+1.189} \\
-    \ce{ClO4- + H2O + 2 e- <=> ClO3- + 2 OH-} &              \num{+0.36} \\
-    \ce{2 HClO + 2 H+ + 2 e- <=> Cl2 + 2 H2O} &              \num{+1.611} \\
-    \ce{2 ClO3- + 12 H+ + 10 e- <=> Cl2 + 6 H2O} & \num{1.47} \\
-    \ce{Co^{2+} + 2 e- <=> Co} &              \num{-0.28} \\
-    \ce{Co^{3+} + e- <=> Co^{2+}} &              \num{+1.92} \\
-    \ce{Cr^{2+} + 2 e- <=> Cr} &              \num{-0.913} \\
-    \ce{Cr^{3+} + e- <=> Cr^{2+}} &              \num{-0.407} \\
-    \ce{Cr^{3+} + 3 e- <=> Cr} &              \num{-0.744} \\
-    \ce{Cr2O7^{2-} + 14 H+ + 6 e- <=> 2 Cr^{3+} + 7 H2O} &              \num{+1.36} \\
-    \ce{CrO4^{2-} + 4 H2O + 3 e- <=> Cr(OH)3 + 5 OH-} & \num{-0.13} \\
-    \ce{Cs+ + e- <=> Cs} &              \num{-3.026} \\
-    \ce{Cu+ + e- <=> Cu} &              \num{+0.521} \\
-    \ce{Cu^{2+} + e- <=> Cu+} &              \num{+0.153} \\
-    \ce{Cu^{2+} + 2 e- <=> Cu} &              \num{+0.3419} \\
-    \ce{Cu(OH)2 + 2 e- <=> Cu + 2 OH-} & \num{-0.222} \\
-    \ce{F2 + 2 e- <=> 2 F-} &              \num{+2.866} \\
-    \ce{Fe^{2+} + 2 e- <=> Fe} &              \num{-0.447} \\
-    \ce{Fe^{3+} + 3 e- <=> Fe} &              \num{-0.037} \\
-    \ce{Fe^{3+} + e- <=> Fe^{2+}} &              \num{+0.771} \\
-    \ce{[Fe(CN)6]^{3-} + e- <=> [Fe(CN)6]^{4-}} & \num{+0.358} \\
-    \ce{[Fe(bipy)3]^{3+} + e- <=> [Fe(bipy)3]^{2+}} & \num{+1.03} \\
-    \ce{Fe(OH)3 + e- <=> Fe(OH)2 + OH-} & \num{-0.56} \\
-    \ce{[Fe(phen)3]^{3+} + e- <=> [Fe(phen)3]^{2+}} & \num{+1.147} \\
-    \ce{Ga^{3+} + e- <=> Ga} &              \num{-0.549} \\
-    \ce{Ga+ + e- <=> Ga} &              \num{-0.2} \\
-    \ce{2 H+ + 2 e- <=> H2} &              \num{0} \\
-    \ce{2 H2O + 2 e- <=> H2 + 2 OH-} &              \num{-0.8277} \\
-    \ce{HO2- + H2O + 2 e- <=> 3 OH-} & \num{+0.878} \\
-    \ce{H2O2 + 2 H+ + 2 e- <=> 2 H2O} &              \num{+1.776} \\
-    \ce{Hg2^{2+} + 2 e- <=> 2 Hg} &              \num{+0.7973} \\
-    \ce{Hg^{2+} + 2 e- <=> Hg} &              \num{+0.851} \\
-    \ce{2 Hg^{2+} + 2 e- <=> Hg2^{2+}} &              \num{+0.920} \\
-    \ce{Hg2Cl2 + 2 e- <=> 2 Hg + 2 Cl-} &              \num{+0.26808} \\
-    \ce{I2 + 2 e- <=> 2 I-} &              \num{+0.5355} \\
-    \ce{I3- + 2 e- <=> 3 I-} &              \num{+0.536} \\
-    \ce{2 IO3- + 12 H+ + 10 e- <=> I2 + 6 H2O} & \num{+1.195} \\
-    \ce{In+ + e- <=> In} &              \num{-0.14} \\
-    \ce{In^{2+} + e- <=> In+} &              \num{-0.40} \\
-    \ce{In^{3+} + e- <=> In^{2+}} &              \num{-0.49} \\
-    \ce{In^{3+} + 2 e- <=> In+} &              \num{-0.443} \\
-    \ce{In^{3+} + 3 e- <=> In} &              \num{-0.3382} \\
-    \ce{K+ + e- <=> K} &              \num{-2.931} \\
-    \ce{La^{3+} + 3 e- <=> La} &              \num{-2.379} \\
-    \ce{Li+ + e- <=> Li} &              \num{-3.0401} \\
-    \ce{Mg^{2+} + 2 e- <=> Mg} &              \num{-2.372} \\
-    \ce{Mn^{2+} + 2 e- <=> Mn} &              \num{-1.185} \\
-    \ce{Mn^{3+} + e- <=> Mn^{2+}} &              \num{+1.5415} \\
-    \ce{MnO2 + 4 H+ + 2 e- <=> Mn^{2+} + 2 H2O} &              \num{+1.224} \\
-    \ce{MnO4- + e- <=> MnO4^{2-}} &              \num{+0.558} \\
-    \ce{MnO4- + 4 H+ + 3 e- <=> MnO2 + 2 H2O} & \num{+1.679} \\
-    \ce{MnO4- + 8 H+ + 5 e- <=> Mn^{2+} + 4 H2O} &              \num{+1.507} \\
-    \ce{MnO4- + 2 H2O + 3 e- <=> MnO2 + 4 OH-} &              \num{+0.595} \\
-    \ce{HNO2 + H+ + e- <=> NO + H2O} & \num{+0.983} \\
-    \ce{2 NO3- + 4 H+ + 2 e- <=> N2O4 + 2 H2O} &              \num{+0.803} \\
-    \ce{NO3- + 4 H+ + 3 e- <=> NO + 2 H2O} &              \num{+0.957} \\
-    \ce{NO3- + H2O + 2 e- <=> NO2- + 2 OH-} &              \num{+0.01} \\
-    \ce{Na+ + e- <=> Na} &              \num{-2.71} \\
-    \ce{Ni^{2+} + 2 e- <=> Ni} &              \num{-0.257} \\
-    % \ce{Ni(OH)3 + e- <=> Ni(OH)2 + OH-} &              \num{+0.49} \\
-    % \ce{O2 + e- <=> O2-} &              \num{-0.56} \\
-    \ce{O2 + 4 H+ + 4 e- <=> 2 H2O} &              \num{+1.229} \\
-    \ce{O2 + H2O + 2 e- <=> HO2- + OH-} &              \num{-0.076} \\
-    \ce{O2 + 2 H2O + 4 e- <=> 4 OH-} &              \num{+0.401} \\
-    \ce{O2 + 2 H+ + 2 e- <=> H2O2} & \num{+0.695} \\
-    \ce{O3 + 2 H+ + 2 e- <=> O2 + H2O} &              \num{+2.076} \\
-    \ce{O3 + H2O + 2 e- <=> O2 + 2 OH-} &              \num{+1.24} \\
-    \ce{Pb^{2+} + 2 e- <=> Pb} &              \num{-0.1262} \\
-    % \ce{Pb^{4+} + 2 e- <=> Pb^{2+}} &              \num{+1.67} \\
+    \ce{Ag+ + e- <=> Ag}                                 & \num{+0.7996} \\
+    \ce{Ag^{2+} + e- <=> Ag+}                            & \num{+1.980} \\
+    \ce{AgBr + e- <=> Ag + Br-}                          & \num{+0.07133} \\
+    \ce{AgCl + e- <=> Ag + Cl-}                          & \num{+0.22233} \\
+    % \ce{[Ag(CN)2]- + e- <=> Ag(s) + 2 CN-}             & \num{-0.31} \\ % Brown
+    \ce{Ag2CrO4 + 2 e- <=> 2 Ag + CrO4^{2-}}             & \num{+0.4470} \\
+    \ce{AgF + e- <=> Ag + F-}                            & \num{+0.779} \\
+    \ce{AgI + e- <=> Ag + I-}                            & \num{-0.15224} \\
+    \ce{Al^{3+} + 3 e- <=> Al}                           & \num{-1.676} \\
+    \ce{H3AsO4 + 2 H+ + 2 e- <=> HAsO2 + 2 H2O}          & \num{+0.560} \\
+    \ce{Au+ + e- <=> Au}                                 & \num{+1.692} \\
+    \ce{Au^{3+} + 2 e- <=> Au+}                          & \num{+1.401} \\
+    \ce{Au^{3+} + 3 e- <=> Au}                           & \num{+1.498} \\
+    \ce{Ba^{2+} + 2 e- <=> Ba}                           & \num{-2.912} \\
+    \ce{Be^{2+} + 2 e- <=> Be}                           & \num{-1.847} \\
+    \ce{Bi^{3+} + 3 e- <=> Bi}                           & \num{+0.308} \\
+    \ce{Bi2O3 + 3 H2O + 6 e- <=> 2 Bi + 6 OH-}           & \num{-0.46} \\
+    \ce{BiO+ + 2 H+ + 3 e- <=> Bi + H2O}                 & \num{+0.320} \\
+    \ce{Br2 + 2 e- <=> 2 Br-}                            & \num{+1.0873} \\
+    \ce{BrO- + H2O + 2 e- <=> Br- + 2 OH-}               & \num{+0.761} \\
+    \ce{2 HBrO + 2 H+ + 2 e- <=> Br2 + 2 H2O}            & \num{+1.574} \\
+    \ce{2 BrO3- + 12 H+ + 10 e- <=> Br2 + 6 H2O}         & \num{+1.482} \\
+    \ce{CO2 + 2 H+ + 2 e- <=> HCOOH}                     & \num{-0.199} \\
+    \ce{Ca^{2+} + 2 e- <=> Ca}                           & \num{-2.868} \\
+    \ce{Cd^{2+} + 2 e- <=> Cd}                           & \num{-0.4030} \\
+    \ce{Cd(OH)2 + 2 e- <=> Cd + 2 OH-}                   & \num{-0.809} \\
+    \ce{Ce^{3+} + 3 e- <=> Ce}                           & \num{-2.336} \\
+    \ce{Ce^{4+} + e- <=> Ce^{3+}}                        & \num{+1.72} \\
+    \ce{Cl2 + 2 e- <=> 2 Cl-}                            & \num{+1.35827} \\
+    \ce{ClO- + H2O + 2 e- <=> Cl- + 2 OH-}               & \num{+0.81} \\
+    \ce{ClO4- + 2 H+ + 2 e- <=> ClO3- + H2O}             & \num{+1.189} \\
+    \ce{ClO4- + H2O + 2 e- <=> ClO3- + 2 OH-}            & \num{+0.36} \\
+    \ce{2 HClO + 2 H+ + 2 e- <=> Cl2 + 2 H2O}            & \num{+1.611} \\
+    \ce{2 ClO3- + 12 H+ + 10 e- <=> Cl2 + 6 H2O}         & \num{1.47} \\
+    \ce{Co^{2+} + 2 e- <=> Co}                           & \num{-0.28} \\
+    \ce{Co^{3+} + e- <=> Co^{2+}}                        & \num{+1.92} \\
+    \ce{Cr^{2+} + 2 e- <=> Cr}                           & \num{-0.913} \\
+    \ce{Cr^{3+} + e- <=> Cr^{2+}}                        & \num{-0.407} \\
+    \ce{Cr^{3+} + 3 e- <=> Cr}                           & \num{-0.744} \\
+    \ce{Cr2O7^{2-} + 14 H+ + 6 e- <=> 2 Cr^{3+} + 7 H2O} & \num{+1.36} \\
+    \ce{CrO4^{2-} + 4 H2O + 3 e- <=> Cr(OH)3 + 5 OH-}    & \num{-0.13} \\
+    \ce{Cs+ + e- <=> Cs}                                 & \num{-3.026} \\
+    \ce{Cu+ + e- <=> Cu}                                 & \num{+0.521} \\
+    \ce{Cu^{2+} + e- <=> Cu+}                            & \num{+0.153} \\
+    \ce{Cu^{2+} + 2 e- <=> Cu}                           & \num{+0.3419} \\
+    \ce{Cu(OH)2 + 2 e- <=> Cu + 2 OH-}                   & \num{-0.222} \\
+    \ce{F2 + 2 e- <=> 2 F-}                              & \num{+2.866} \\
+    \ce{Fe^{2+} + 2 e- <=> Fe}                           & \num{-0.447} \\
+    \ce{Fe^{3+} + 3 e- <=> Fe}                           & \num{-0.037} \\
+    \ce{Fe^{3+} + e- <=> Fe^{2+}}                        & \num{+0.771} \\
+    \ce{[Fe(CN)6]^{3-} + e- <=> [Fe(CN)6]^{4-}}          & \num{+0.358} \\
+    \ce{[Fe(bipy)3]^{3+} + e- <=> [Fe(bipy)3]^{2+}}      & \num{+1.03} \\
+    \ce{Fe(OH)3 + e- <=> Fe(OH)2 + OH-}                  & \num{-0.56} \\
+    \ce{[Fe(phen)3]^{3+} + e- <=> [Fe(phen)3]^{2+}}      & \num{+1.147} \\
+    \ce{Ga^{3+} + e- <=> Ga}                             & \num{-0.549} \\
+    \ce{Ga+ + e- <=> Ga}                                 & \num{-0.2} \\
+    \ce{2 H+ + 2 e- <=> H2}                              & \num{0} \\
+    \ce{2 H2O + 2 e- <=> H2 + 2 OH-}                     & \num{-0.8277} \\
+    \ce{HO2- + H2O + 2 e- <=> 3 OH-}                     & \num{+0.878} \\
+    \ce{H2O2 + 2 H+ + 2 e- <=> 2 H2O}                    & \num{+1.776} \\
+    \ce{Hg2^{2+} + 2 e- <=> 2 Hg}                        & \num{+0.7973} \\
+    \ce{Hg^{2+} + 2 e- <=> Hg}                           & \num{+0.851} \\
+    \ce{2 Hg^{2+} + 2 e- <=> Hg2^{2+}}                   & \num{+0.920} \\
+    \ce{Hg2Cl2 + 2 e- <=> 2 Hg + 2 Cl-}                  & \num{+0.26808} \\
+    \ce{I2 + 2 e- <=> 2 I-}                              & \num{+0.5355} \\
+    \ce{I3- + 2 e- <=> 3 I-}                             & \num{+0.536} \\
+    \ce{2 IO3- + 12 H+ + 10 e- <=> I2 + 6 H2O}           & \num{+1.195} \\
+    \ce{In+ + e- <=> In}                                 & \num{-0.14} \\
+    \ce{In^{2+} + e- <=> In+}                            & \num{-0.40} \\
+    \ce{In^{3+} + e- <=> In^{2+}}                        & \num{-0.49} \\
+    \ce{In^{3+} + 2 e- <=> In+}                          & \num{-0.443} \\
+    \ce{In^{3+} + 3 e- <=> In}                           & \num{-0.3382} \\
+    \ce{K+ + e- <=> K}                                   & \num{-2.931} \\
+    \ce{La^{3+} + 3 e- <=> La}                           & \num{-2.379} \\
+    \ce{Li+ + e- <=> Li}                                 & \num{-3.0401} \\
+    \ce{Mg^{2+} + 2 e- <=> Mg}                           & \num{-2.372} \\
+    \ce{Mn^{2+} + 2 e- <=> Mn}                           & \num{-1.185} \\
+    \ce{Mn^{3+} + e- <=> Mn^{2+}}                        & \num{+1.5415} \\
+    \ce{MnO2 + 4 H+ + 2 e- <=> Mn^{2+} + 2 H2O}          & \num{+1.224} \\
+    \ce{MnO4- + e- <=> MnO4^{2-}}                        & \num{+0.558} \\
+    \ce{MnO4- + 4 H+ + 3 e- <=> MnO2 + 2 H2O}            & \num{+1.679} \\
+    \ce{MnO4- + 8 H+ + 5 e- <=> Mn^{2+} + 4 H2O}         & \num{+1.507} \\
+    \ce{MnO4- + 2 H2O + 3 e- <=> MnO2 + 4 OH-}           & \num{+0.595} \\
+    \ce{HNO2 + H+ + e- <=> NO + H2O}                     & \num{+0.983} \\
+    \ce{2 NO3- + 4 H+ + 2 e- <=> N2O4 + 2 H2O}           & \num{+0.803} \\
+    \ce{NO3- + 4 H+ + 3 e- <=> NO + 2 H2O}               & \num{+0.957} \\
+    \ce{NO3- + H2O + 2 e- <=> NO2- + 2 OH-}              & \num{+0.01} \\
+    \ce{Na+ + e- <=> Na}                                 & \num{-2.71} \\
+    \ce{Ni^{2+} + 2 e- <=> Ni}                           & \num{-0.257} \\
+    % \ce{Ni(OH)3 + e- <=> Ni(OH)2 + OH-}                & \num{+0.49} \\
+    % \ce{O2 + e- <=> O2-}                               & \num{-0.56} \\
+    \ce{O2 + 4 H+ + 4 e- <=> 2 H2O}                      & \num{+1.229} \\
+    \ce{O2 + H2O + 2 e- <=> HO2- + OH-}                  & \num{-0.076} \\
+    \ce{O2 + 2 H2O + 4 e- <=> 4 OH-}                     & \num{+0.401} \\
+    \ce{O2 + 2 H+ + 2 e- <=> H2O2}                       & \num{+0.695} \\
+    \ce{O3 + 2 H+ + 2 e- <=> O2 + H2O}                   & \num{+2.076} \\
+    \ce{O3 + H2O + 2 e- <=> O2 + 2 OH-}                  & \num{+1.24} \\
+    \ce{Pb^{2+} + 2 e- <=> Pb}                           & \num{-0.1262} \\
+    % \ce{Pb^{4+} + 2 e- <=> Pb^{2+}}                    & \num{+1.67} \\
     \ce{PbO2 + SO4^{2-} + 4 H+ + 2 e- <=> PbSO4 + 2 H2O} & \num{+1.6913} \\
-    \ce{PbSO4 + 2 e- <=> Pb + SO4^{2-}} &              \num{-0.3588} \\
-    \ce{Pt^{2+} + 2 e- <=> Pt} &              \num{+1.18} \\
-    \ce{[PtCl4]^{2-} + 2 e- <=> Pt + 4 Cl-} & \num{+0.755} \\
-    \ce{Pu^{4+} + e- <=> Pu^{3+}} &              \num{+1.006} \\
-    \ce{Ra^{2+} + 2 e- <=> Ra} &              \num{-2.8} \\
-    \ce{Rb+ + e- <=> Rb} &              \num{-2.98} \\
-    \ce{S + 2 e- <=> S^{2-}} &              \num{-0.47627} \\
-    \ce{S + 2 H+ + 2 e- <=> H2S} & \num{+0,142} \\
-    \ce{H2SO3 + 4 H+ + 4 e- <=> S + 3 H2O} & \num{+ 0.45} \\
-    \ce{SO4^{2-} + 4 H+ + 2 e- <=> H2SO3 + H2O} &              \num{+0.172} \\
-    \ce{S2O8^{2-} + 2 e- <=> 2 SO4^{2-}} &              \num{+2.010} \\
-    \ce{Se + 2 e- <=> Se^{2-}} &              \num{-0.670} \\
-    \ce{Sn^{2+} + 2 e- <=> Sn} &              \num{-0.1375} \\
-    \ce{Sn^{4+} + 2 e- <=> Sn^{2+}} &              \num{+0.151} \\
-    \ce{Sr^{2+} + 2 e- <=> Sr} &              \num{-2.899} \\
-    \ce{Te + 2 e- <=> Te^{2-}} &              \num{-1.143} \\
-    \ce{Ti^{2+} + 2 e- <=> Ti} &              \num{-1.628} \\
-    \ce{Ti^{3+} + e- <=> Ti^{2+}} &              \num{-0.369} \\
-    % \ce{Ti^{4+} + e- <=> Ti^{3+}} &               \num{0.00} \\
-    \ce{Tl+ + e- <=> Tl} &              \num{-0.336} \\
-    \ce{U^{3+} + 3 e- <=> U} &              \num{-1.66} \\
-    \ce{U^{4+} + e- <=> U^{3+}} &              \num{-0.52} \\
-    \ce{V^{2+} + 2 e- <=> V} &              \num{-1.175} \\
-    \ce{V^{3+} + e- <=> V^{2+}} &              \num{-0.255} \\
-    \ce{VO2+ + 2 H+ + e- <=> VO^{2+} + H2O} & \num{+0.991} \\
-    \ce{H4XeO6 + 2 H+ + 2 e- <=> XeO3 + 3 H2O} &               \num{+2.42} \\
-    \ce{Zn^{2+} + 2 e- <=> Zn} &              \num{-0.7618} \\
+    \ce{PbSO4 + 2 e- <=> Pb + SO4^{2-}}                  & \num{-0.3588} \\
+    \ce{Pt^{2+} + 2 e- <=> Pt}                           & \num{+1.18} \\
+    \ce{[PtCl4]^{2-} + 2 e- <=> Pt + 4 Cl-}              & \num{+0.755} \\
+    \ce{Pu^{4+} + e- <=> Pu^{3+}}                        & \num{+1.006} \\
+    \ce{Ra^{2+} + 2 e- <=> Ra}                           & \num{-2.8} \\
+    \ce{Rb+ + e- <=> Rb}                                 & \num{-2.98} \\
+    \ce{S + 2 e- <=> S^{2-}}                             & \num{-0.47627} \\
+    \ce{S + 2 H+ + 2 e- <=> H2S}                         & \num{+0,142} \\
+    \ce{H2SO3 + 4 H+ + 4 e- <=> S + 3 H2O}               & \num{+ 0.45} \\
+    \ce{SO4^{2-} + 4 H+ + 2 e- <=> H2SO3 + H2O}          & \num{+0.172} \\
+    \ce{S2O8^{2-} + 2 e- <=> 2 SO4^{2-}}                 & \num{+2.010} \\
+    \ce{Se + 2 e- <=> Se^{2-}}                           & \num{-0.670} \\
+    \ce{Sn^{2+} + 2 e- <=> Sn}                           & \num{-0.1375} \\
+    \ce{Sn^{4+} + 2 e- <=> Sn^{2+}}                      & \num{+0.151} \\
+    \ce{Sr^{2+} + 2 e- <=> Sr}                           & \num{-2.899} \\
+    \ce{Te + 2 e- <=> Te^{2-}}                           & \num{-1.143} \\
+    \ce{Ti^{2+} + 2 e- <=> Ti}                           & \num{-1.628} \\
+    \ce{Ti^{3+} + e- <=> Ti^{2+}}                        & \num{-0.369} \\
+    % \ce{Ti^{4+} + e- <=> Ti^{3+}}                      & \num{0.00} \\
+    \ce{Tl+ + e- <=> Tl}                                 & \num{-0.336} \\
+    \ce{U^{3+} + 3 e- <=> U}                             & \num{-1.66} \\
+    \ce{U^{4+} + e- <=> U^{3+}}                          & \num{-0.52} \\
+    \ce{V^{2+} + 2 e- <=> V}                             & \num{-1.175} \\
+    \ce{V^{3+} + e- <=> V^{2+}}                          & \num{-0.255} \\
+    \ce{VO2+ + 2 H+ + e- <=> VO^{2+} + H2O}              & \num{+0.991} \\
+    \ce{H4XeO6 + 2 H+ + 2 e- <=> XeO3 + 3 H2O}           & \num{+2.42} \\
+    \ce{Zn^{2+} + 2 e- <=> Zn}                           & \num{-0.7618} \\
     \bottomrule
     \end{supertabular}
 \end{footnotesize}
